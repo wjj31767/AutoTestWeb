@@ -1,0 +1,46 @@
+from rest_framework import serializers
+from .models import Environment, EnvironmentVariable
+
+class EnvironmentVariableSerializer(serializers.ModelSerializer):
+    """环境变量序列化器"""
+    class Meta:
+        model = EnvironmentVariable
+        fields = ['id', 'environment', 'key', 'value', 'description']
+        read_only_fields = ['id']
+
+class EnvironmentSerializer(serializers.ModelSerializer):
+    """环境序列化器"""
+    variables = EnvironmentVariableSerializer(many=True, read_only=True)
+    status_display = serializers.CharField(source='get_status_display', read_only=True)
+    type_display = serializers.CharField(source='get_type_display', read_only=True)
+    conn_type_display = serializers.CharField(source='get_conn_type_display', read_only=True)
+
+    class Meta:
+        model = Environment
+        fields = [
+            'id', 'name', 'type', 'type_display', 'conn_type', 'conn_type_display',
+            'admin', 'admin_password', 'cabinet_frame_slot', 'port', 'ftp_mask',
+            'status', 'status_display', 'owner', 'last_check_time',
+            'create_time', 'update_time', 'variables'
+        ]
+        read_only_fields = ['id', 'create_time', 'update_time', 'variables']
+
+    def validate_name(self, value):
+        """验证环境名称的唯一性"""
+        if self.instance is None:
+            if Environment.objects.filter(name=value, is_deleted=False).exists():
+                raise serializers.ValidationError('环境名称已存在')
+        else:
+            if Environment.objects.filter(name=value, is_deleted=False).exclude(id=self.instance.id).exists():
+                raise serializers.ValidationError('环境名称已存在')
+        return value
+
+    def validate(self, data):
+        """验证数据的一致性"""
+        # 根据连接方式验证必填字段
+        conn_type = data.get('conn_type', self.instance.conn_type if self.instance else None)
+        if conn_type == 'Redirect' and not data.get('cabinet_frame_slot'):
+            raise serializers.ValidationError('Redirect连接方式下必须填写机柜槽位')
+        if conn_type == 'Telnet' and not data.get('port'):
+            raise serializers.ValidationError('Telnet连接方式下必须填写端口')
+        return data
