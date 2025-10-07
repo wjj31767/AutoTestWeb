@@ -27,6 +27,7 @@ class Environment(BaseModel):
         ],
         null=False
     )
+    ip = models.CharField(max_length=32, verbose_name='环境IP地址', null=False, default='127.0.0.1', help_text='如 192.168.1.100')
     admin = models.CharField(max_length=32, verbose_name='mml账号名', null=True, blank=True, default='admin', help_text='不填默认为admin')
     admin_password = models.CharField(max_length=128, verbose_name='mml账号密码', null=False)
     cabinet_frame_slot = models.CharField(max_length=128, verbose_name='机柜槽位', null=False, help_text='Redirect连接方式下需要')

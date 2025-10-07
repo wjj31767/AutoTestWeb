@@ -1,0 +1,10 @@
+{
+  "success": true,
+  "steps": {
+    "api_check": true,
+    "login": true,
+    "get_env_list": true,
+    "update_environment": true
+  },
+  "message": "环境编辑权限验证通过"
+}

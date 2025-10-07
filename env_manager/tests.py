@@ -11,6 +11,8 @@ from env_manager.models import Environment, EnvironmentVariable
 from common.models import BaseModel
 import json
 import datetime
+from django.test import TestCase
+
 
 class EnvironmentModelTestCase(TestCase):
     """环境模型的测试用例"""
@@ -444,3 +446,203 @@ class EnvironmentIntegrationTestCase(TestCase):
         for var in variables:
             self.assertIn(var['key'], created_vars)
             self.assertEqual(created_vars[var['key']], var['value'])
+
+
+class EnvironmentSearchTestCase(TestCase):
+    """环境搜索功能的测试用例"""
+    
+    def setUp(self):
+        """测试前的准备工作"""
+        # 创建测试客户端
+        self.client = APIClient()
+        
+        # 创建普通用户
+        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        
+        # 创建管理员用户
+        self.admin_user = User.objects.create_superuser(username='adminuser', password='adminpassword')
+        
+        # 创建多个测试环境用于搜索测试
+        self.environments = [
+            Environment.objects.create(
+                id='env-search-1',
+                name='搜索测试环境1',
+                type='FPGA',
+                status='available',
+                conn_type='SSH',
+                owner='testuser',
+                admin='admin1',
+                admin_password='password123',
+                ip='192.168.1.101',
+                cabinet_frame_slot='cabinet1-frame1-slot1',
+                port='22'
+            ),
+            Environment.objects.create(
+                id='env-search-2',
+                name='搜索测试环境2',
+                type='simulation',
+                status='occupied',
+                conn_type='Telnet',
+                owner='adminuser',
+                admin='admin2',
+                admin_password='password456',
+                ip='192.168.1.102',
+                cabinet_frame_slot='cabinet1-frame1-slot2',
+                port='23'
+            ),
+            Environment.objects.create(
+                id='env-search-3',
+                name='search-test-env-3',
+                type='testboard',
+                status='maintenance',
+                conn_type='Serial',
+                owner='testuser',
+                admin='admin3',
+                admin_password='password789',
+                ip='192.168.1.103',
+                cabinet_frame_slot='cabinet1-frame1-slot3',
+                port='9600'
+            ),
+            Environment.objects.create(
+                id='env-search-4',
+                name='Production Environment',
+                type='FPGA',
+                status='available',
+                conn_type='SSH',
+                owner='adminuser',
+                admin='root',
+                admin_password='prod123',
+                ip='192.168.1.200',
+                cabinet_frame_slot='cabinet2-frame1-slot1',
+                port='22'
+            )
+        ]
+        
+        # 登录普通用户以进行测试
+        self.client.login(username='testuser', password='testpassword')
+    
+    def test_search_by_name_exact(self):
+        """测试按名称精确搜索"""
+        url = reverse('environment-list') + '?search=搜索测试环境1'
+        response = self.client.get(url)
+        
+        # 检查响应状态
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # 检查返回的环境数量
+        self.assertEqual(len(response.data['results']), 1)
+        # 检查返回的环境名称是否正确
+        self.assertEqual(response.data['results'][0]['name'], '搜索测试环境1')
+    
+    def test_search_by_name_partial(self):
+        """测试按名称模糊搜索"""
+        url = reverse('environment-list') + '?search=搜索测试'
+        response = self.client.get(url)
+        
+        # 检查响应状态
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # 检查返回的环境数量
+        self.assertEqual(len(response.data['results']), 2)
+        # 检查返回的环境名称是否包含搜索字符串
+        names = [env['name'] for env in response.data['results']]
+        self.assertIn('搜索测试环境1', names)
+        self.assertIn('搜索测试环境2', names)
+    
+    def test_search_by_type(self):
+        """测试按环境类型搜索"""
+        url = reverse('environment-list') + '?type=FPGA'
+        response = self.client.get(url)
+        
+        # 检查响应状态
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # 检查返回的环境数量
+        self.assertEqual(len(response.data['results']), 2)
+        # 检查返回的环境类型是否正确
+        for env in response.data['results']:
+            self.assertEqual(env['type'], 'FPGA')
+    
+    def test_search_by_status(self):
+        """测试按环境状态搜索"""
+        url = reverse('environment-list') + '?status=available'
+        response = self.client.get(url)
+        
+        # 检查响应状态
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # 检查返回的环境数量
+        self.assertEqual(len(response.data['results']), 2)
+        # 检查返回的环境状态是否正确
+        for env in response.data['results']:
+            self.assertEqual(env['status'], 'available')
+    
+    def test_search_by_ip(self):
+        """测试按IP地址搜索"""
+        url = reverse('environment-list') + '?ip=192.168.1.101'
+        response = self.client.get(url)
+        
+        # 检查响应状态
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # 检查返回的环境数量
+        self.assertEqual(len(response.data['results']), 1)
+        # 检查返回的IP地址是否正确
+        self.assertEqual(response.data['results'][0]['ip'], '192.168.1.101')
+    
+    def test_search_by_admin(self):
+        """测试按管理员名称搜索"""
+        url = reverse('environment-list') + '?search=admin1'
+        response = self.client.get(url)
+        
+        # 检查响应状态
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # 检查返回的环境数量
+        self.assertEqual(len(response.data['results']), 1)
+        # 检查返回的管理员名称是否正确
+        self.assertEqual(response.data['results'][0]['admin'], 'admin1')
+    
+    def test_combined_search(self):
+        """测试组合条件搜索"""
+        # 搜索类型为FPGA且状态为available的环境（使用filterset_fields）
+        url = reverse('environment-list') + '?type=FPGA&status=available'
+        response = self.client.get(url)
+        
+        # 检查响应状态
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # 检查返回的环境数量
+        self.assertEqual(len(response.data['results']), 2)
+        # 检查返回的环境是否满足所有条件
+        for env in response.data['results']:
+            self.assertEqual(env['type'], 'FPGA')
+            self.assertEqual(env['status'], 'available')
+    
+    def test_search_no_results(self):
+        """测试搜索没有结果的情况"""
+        url = reverse('environment-list') + '?search=不存在的环境名称'
+        response = self.client.get(url)
+        
+        # 检查响应状态
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # 检查返回的环境数量
+        self.assertEqual(len(response.data['results']), 0)
+        self.assertEqual(response.data['count'], 0)
+    
+    def test_search_case_insensitive(self):
+        """测试搜索是否大小写不敏感"""
+        url = reverse('environment-list') + '?search=SEARCH-TEST'
+        response = self.client.get(url)
+        
+        # 检查响应状态
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # 检查返回的环境数量
+        self.assertEqual(len(response.data['results']), 1)
+        # 检查返回的环境名称是否正确
+        self.assertEqual(response.data['results'][0]['name'], 'search-test-env-3')
+    
+    def test_search_with_pagination(self):
+        """测试搜索结果的分页功能"""
+        # 使用项目文档中定义的分页参数格式
+        url = reverse('environment-list') + '?search=搜索'
+        response = self.client.get(url)
+        
+        # 检查响应状态
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        # 检查数据结构是否包含分页所需的字段
+        self.assertIn('results', response.data)
+        self.assertIn('count', response.data)

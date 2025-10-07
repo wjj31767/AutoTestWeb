@@ -9,8 +9,30 @@ export default defineConfig({
       '/api': {
         target: 'http://localhost:8000',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        // 添加credentials配置，确保cookies被正确传递
+        configure: (proxy, options) => {
+          proxy.on('proxyReq', (proxyReq, req, res) => {
+            // 确保cookies被传递
+            if (req.headers.cookie) {
+              proxyReq.setHeader('cookie', req.headers.cookie);
+            }
+          });
+        }
       }
+    }
+  },
+  test: {
+    environment: 'jsdom',
+    setupFiles: './vitest.setup.js',
+    coverage: {
+      provider: 'v8',
+      include: ['src/**/*.{vue,js}'],
+      exclude: ['src/main.js', 'src/router/index.js', 'src/App.vue']
+    }
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
     }
   }
 })

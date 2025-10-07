@@ -1,0 +1,57 @@
+{
+  "timestamp": "2025-10-07T17:49:36.150Z",
+  "totalTests": 8,
+  "passedTests": 8,
+  "failedTests": 0,
+  "testResults": [
+    {
+      "name": "环境列表接口测试",
+      "passed": true,
+      "message": "测试通过",
+      "executionTime": 2.023
+    },
+    {
+      "name": "环境列表空数据处理测试",
+      "passed": true,
+      "message": "测试通过",
+      "executionTime": 1.331
+    },
+    {
+      "name": "环境列表增强功能测试",
+      "passed": true,
+      "message": "测试通过",
+      "executionTime": 1.262
+    },
+    {
+      "name": "环境创建权限测试",
+      "passed": true,
+      "message": "测试通过",
+      "executionTime": 2.689
+    },
+    {
+      "name": "普通用户创建环境测试",
+      "passed": true,
+      "message": "测试通过",
+      "executionTime": 1.351
+    },
+    {
+      "name": "环境详情接口测试",
+      "passed": true,
+      "message": "测试通过",
+      "executionTime": 1.226
+    },
+    {
+      "name": "环境更新接口测试",
+      "passed": true,
+      "message": "测试通过",
+      "executionTime": 1.824
+    },
+    {
+      "name": "环境删除接口测试",
+      "passed": true,
+      "message": "测试通过",
+      "executionTime": 1.684
+    }
+  ],
+  "executionTime": 13.456
+}

@@ -1,0 +1,9 @@
+{
+  "timestamp": "2025-10-07T17:49:56.632Z",
+  "success": false,
+  "message": "测试失败: Cannot read properties of undefined (reading 'create')",
+  "details": {
+    "environment": "Node.js CLI",
+    "testSteps": []
+  }
+}

@@ -19,11 +19,11 @@ class EnvironmentSerializer(serializers.ModelSerializer):
         model = Environment
         fields = [
             'id', 'name', 'type', 'type_display', 'conn_type', 'conn_type_display',
-            'admin', 'admin_password', 'cabinet_frame_slot', 'port', 'ftp_mask',
+            'ip', 'admin', 'admin_password', 'cabinet_frame_slot', 'port', 'ftp_mask',
             'status', 'status_display', 'owner', 'last_check_time',
             'create_time', 'update_time', 'variables'
         ]
-        read_only_fields = ['id', 'create_time', 'update_time', 'variables']
+        read_only_fields = ['id', 'create_time', 'update_time', 'variables', 'owner']
 
     def validate_name(self, value):
         """验证环境名称的唯一性"""
@@ -44,3 +44,25 @@ class EnvironmentSerializer(serializers.ModelSerializer):
         if conn_type == 'Telnet' and not data.get('port'):
             raise serializers.ValidationError('Telnet连接方式下必须填写端口')
         return data
+
+    def update(self, instance, validated_data):
+        """更新环境时，自动从请求中获取当前用户的用户名作为owner"""
+        # 从上下文中获取请求对象
+        request = self.context.get('request')
+        if request and request.user.is_authenticated:
+            # 设置owner为当前登录用户的用户名
+            validated_data['owner'] = request.user.username
+        
+        # 调用父类的update方法完成其他字段的更新
+        return super().update(instance, validated_data)
+        
+    def create(self, validated_data):
+        """创建环境时，自动从请求中获取当前用户的用户名作为owner"""
+        # 从上下文中获取请求对象
+        request = self.context.get('request')
+        if request and request.user.is_authenticated:
+            # 设置owner为当前登录用户的用户名
+            validated_data['owner'] = request.user.username
+        
+        # 调用父类的create方法完成创建
+        return super().create(validated_data)

@@ -8,8 +8,8 @@ router = routers.DefaultRouter()
 
 # 注册环境视图集
 router.register(
-    r'environments', 
-    EnvironmentViewSet, 
+    r'environments',
+    EnvironmentViewSet,
     basename='environment'
 )
 

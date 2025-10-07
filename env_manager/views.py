@@ -3,6 +3,10 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from .models import Environment, EnvironmentVariable
 from .serializers import EnvironmentSerializer, EnvironmentVariableSerializer
+from env_manager.permissions import IsAdminOrEnvOwner
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
+from rest_framework import viewsets, filters
+from common.auth import CustomTokenAuthentication
 from common.utils import audit_log, get_current_user, generate_unique_id
 from common.permissions import IsAdminOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
@@ -13,10 +17,11 @@ class EnvironmentViewSet(viewsets.ModelViewSet):
     """环境管理视图集"""
     queryset = Environment.objects.filter(is_deleted=False)
     serializer_class = EnvironmentSerializer
-    permission_classes = [IsAdminOrReadOnly]
+    permission_classes = [IsAdminOrEnvOwner]
+    authentication_classes = [CustomTokenAuthentication, SessionAuthentication, BasicAuthentication]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
-    filterset_fields = ['type', 'status', 'conn_type', 'owner']
-    search_fields = ['name', 'admin']
+    filterset_fields = ['type', 'status', 'conn_type', 'owner', 'ip']
+    search_fields = ['name', 'admin', 'ip']
     ordering_fields = ['create_time', 'update_time', 'name']
     ordering = ['-create_time']
 
