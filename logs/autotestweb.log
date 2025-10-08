@@ -4936,3 +4936,205 @@ INFO 2025-10-08 02:05:07,064 basehttp 45720 39112 "GET /api/environments/?page=1
 INFO 2025-10-08 02:05:10,897 basehttp 45720 44828 "GET /api/environments/?page=1&pageSize=20&page_size=20&limit=20&_t=1759860310747 HTTP/1.1" 200 9502
 INFO 2025-10-08 02:05:18,321 basehttp 45720 30820 "GET /api/environments/?page=1&pageSize=50&page_size=50&limit=50&_t=1759860318107 HTTP/1.1" 200 14590
 INFO 2025-10-08 02:05:33,900 basehttp 45720 26936 "GET /api/environments/?page=1&pageSize=10&page_size=10&limit=10&_t=1759860333783 HTTP/1.1" 200 4821
+INFO 2025-10-08 14:17:45,559 autoreload 23968 25056 Watching for file changes with StatReloader
+INFO 2025-10-08 14:18:36,255 basehttp 23968 17236 "GET /api/test_suites/?name=&visible_scope=&page=1&pageSize=10 HTTP/1.1" 200 826
+WARNING 2025-10-08 14:19:01,755 log 23968 19752 Bad Request: /api/test_suites/
+WARNING 2025-10-08 14:19:01,755 basehttp 23968 19752 "POST /api/test_suites/ HTTP/1.1" 400 39
+WARNING 2025-10-08 14:19:19,407 log 23968 20072 Bad Request: /api/test_suites/
+WARNING 2025-10-08 14:19:19,408 basehttp 23968 20072 "POST /api/test_suites/ HTTP/1.1" 400 39
+INFO 2025-10-08 14:21:40,967 autoreload 23968 25056 E:\WorkSpace\website\AutoTestWeb\test_suite\serializers.py changed, reloading.
+INFO 2025-10-08 14:21:41,738 autoreload 424 24180 Watching for file changes with StatReloader
+INFO 2025-10-08 14:28:14,152 basehttp 424 7868 "POST /api/test_suites/ HTTP/1.1" 201 206
+INFO 2025-10-08 14:28:14,174 basehttp 424 5300 "GET /api/test_suites/?name=&visible_scope=&page=1&pageSize=10 HTTP/1.1" 200 1033
+INFO 2025-10-08 14:28:20,368 basehttp 424 26556 "PUT /api/test_suites/suite-6616bcca/ HTTP/1.1" 200 206
+INFO 2025-10-08 14:28:20,389 basehttp 424 25944 "GET /api/test_suites/?name=&visible_scope=&page=1&pageSize=10 HTTP/1.1" 200 1033
+INFO 2025-10-08 14:28:31,138 basehttp 424 10264 "DELETE /api/test_suites/suite-6616bcca/ HTTP/1.1" 204 0
+INFO 2025-10-08 14:28:31,155 basehttp 424 14872 "GET /api/test_suites/?name=&visible_scope=&page=1&pageSize=10 HTTP/1.1" 200 826
+INFO 2025-10-08 14:30:58,108 basehttp 424 14872 "GET /api/test_suites/?name=&visible_scope=&page=1&pageSize=10 HTTP/1.1" 200 826
+INFO 2025-10-08 14:40:51,473 autoreload 424 24180 E:\WorkSpace\website\AutoTestWeb\module_manager\models.py changed, reloading.
+INFO 2025-10-08 14:40:52,635 autoreload 29844 29004 Watching for file changes with StatReloader
+INFO 2025-10-08 15:04:46,472 autoreload 29844 29004 E:\WorkSpace\website\AutoTestWeb\module_manager\models.py changed, reloading.
+INFO 2025-10-08 15:04:47,492 autoreload 29196 27156 Watching for file changes with StatReloader
+INFO 2025-10-08 15:05:32,547 basehttp 29196 13168 "GET /api/environments/?page=1&pageSize=10&page_size=10&limit=10&_t=1759907132475 HTTP/1.1" 200 4821
+WARNING 2025-10-08 15:13:31,542 log 29196 20408 Not Found: /api/modules/
+WARNING 2025-10-08 15:13:31,542 basehttp 29196 20408 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 404 10724
+WARNING 2025-10-08 15:13:36,313 log 29196 27556 Not Found: /api/modules/
+WARNING 2025-10-08 15:13:36,314 basehttp 29196 27556 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 404 10724
+INFO 2025-10-08 15:15:05,201 autoreload 29196 27156 E:\WorkSpace\website\AutoTestWeb\AutoTestWeb\urls.py changed, reloading.
+INFO 2025-10-08 15:15:06,063 autoreload 30784 30900 Watching for file changes with StatReloader
+WARNING 2025-10-08 15:21:03,791 log 26032 29820 Bad Request: /api/features/
+WARNING 2025-10-08 15:24:43,592 log 12236 26080 Bad Request: /api/features/
+ERROR 2025-10-08 15:26:10,135 log 24208 14840 Internal Server Error: /api/features/
+Traceback (most recent call last):
+  File "F:\Software\python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\Software\python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Software\python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "E:\WorkSpace\website\AutoTestWeb\module_manager\views.py", line 59, in perform_create
+    serializer.save(creator=user)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "E:\WorkSpace\website\AutoTestWeb\module_manager\serializers.py", line 89, in create
+    module.feature_count = Module.objects.filter(module_id=feature.module_id, is_deleted=False).count()
+                           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\sql\query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\sql\query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\sql\query.py", line 1526, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\sql\query.py", line 1333, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\sql\query.py", line 1806, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'module_id' into field. Choices are: chip_model, create_time, creator, description, feature_count, id, is_deleted, module_name, update_time
+WARNING 2025-10-08 15:26:17,475 log 24208 14840 Forbidden: /api/modules/module-api-test-1/
+WARNING 2025-10-08 15:26:23,241 log 24208 14840 Not Found: /api/modules/module-api-test-2/
+WARNING 2025-10-08 15:26:31,163 log 24208 14840 Forbidden: /api/modules/
+WARNING 2025-10-08 15:26:34,059 log 24208 14840 Forbidden: /api/modules/module-api-test-1/
+INFO 2025-10-08 15:27:44,998 autoreload 30784 30900 E:\WorkSpace\website\AutoTestWeb\common\permissions.py changed, reloading.
+INFO 2025-10-08 15:27:45,937 autoreload 27804 26640 Watching for file changes with StatReloader
+ERROR 2025-10-08 15:28:08,077 log 31356 33656 Internal Server Error: /api/features/
+Traceback (most recent call last):
+  File "F:\Software\python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\Software\python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Software\python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "E:\WorkSpace\website\AutoTestWeb\module_manager\views.py", line 59, in perform_create
+    serializer.save(creator=user)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "E:\WorkSpace\website\AutoTestWeb\module_manager\serializers.py", line 89, in create
+    module.feature_count = Module.objects.filter(module_id=feature.module_id, is_deleted=False).count()
+                           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\sql\query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\sql\query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\sql\query.py", line 1526, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\sql\query.py", line 1333, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\django\db\models\sql\query.py", line 1806, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'module_id' into field. Choices are: chip_model, create_time, creator, description, feature_count, id, is_deleted, module_name, update_time
+WARNING 2025-10-08 15:28:21,099 log 31356 33656 Not Found: /api/modules/module-api-test-2/
+WARNING 2025-10-08 15:28:29,042 log 31356 33656 Forbidden: /api/modules/
+INFO 2025-10-08 15:29:35,712 autoreload 27804 26640 E:\WorkSpace\website\AutoTestWeb\module_manager\serializers.py changed, reloading.
+INFO 2025-10-08 15:29:36,647 autoreload 31312 33568 Watching for file changes with StatReloader
+WARNING 2025-10-08 15:30:00,493 log 27148 30888 Not Found: /api/modules/module-api-test-2/
+WARNING 2025-10-08 15:30:08,438 log 27148 30888 Forbidden: /api/modules/
+INFO 2025-10-08 15:30:27,915 autoreload 30516 2292 Watching for file changes with StatReloader
+WARNING 2025-10-08 15:31:08,980 log 31312 26592 Forbidden: /api/modules/
+WARNING 2025-10-08 15:31:08,981 basehttp 31312 26592 "GET /api/modules/ HTTP/1.1" 403 58
+INFO 2025-10-08 15:31:09,263 basehttp 31312 26592 - Broken pipe from ('127.0.0.1', 63213)
+WARNING 2025-10-08 15:33:13,538 log 31312 17260 Unauthorized: /api/user/login/
+WARNING 2025-10-08 15:33:13,539 basehttp 31312 17260 "POST /api/user/login/ HTTP/1.1" 401 36
+WARNING 2025-10-08 15:33:16,372 log 31312 30784 Unauthorized: /api/user/login/
+WARNING 2025-10-08 15:33:16,373 basehttp 31312 30784 "POST /api/user/login/ HTTP/1.1" 401 36
+WARNING 2025-10-08 15:33:18,415 log 31312 20072 Forbidden: /api/modules/
+WARNING 2025-10-08 15:33:18,415 basehttp 31312 20072 "GET /api/modules/ HTTP/1.1" 403 58
+WARNING 2025-10-08 15:33:21,204 log 31312 9064 Unauthorized: /api/user/login/
+WARNING 2025-10-08 15:33:21,204 basehttp 31312 9064 "POST /api/user/login/ HTTP/1.1" 401 36
+INFO 2025-10-08 15:34:43,115 basehttp 31312 13360 "POST /api/user/login/ HTTP/1.1" 200 186
+WARNING 2025-10-08 15:34:45,156 log 31312 32736 Forbidden: /api/features/
+WARNING 2025-10-08 15:34:45,157 basehttp 31312 32736 "GET /api/features/ HTTP/1.1" 403 58
+WARNING 2025-10-08 15:34:47,190 log 31312 25748 Forbidden: /api/modules/
+WARNING 2025-10-08 15:34:47,190 basehttp 31312 25748 "GET /api/modules/ HTTP/1.1" 403 58
+INFO 2025-10-08 15:34:49,242 basehttp 31312 32236 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 200 64
+INFO 2025-10-08 15:36:06,047 basehttp 31312 33516 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 200 64
+INFO 2025-10-08 15:36:10,639 basehttp 31312 31024 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 200 64
+INFO 2025-10-08 15:36:27,356 basehttp 31312 4328 "POST /api/modules/ HTTP/1.1" 201 200
+INFO 2025-10-08 15:36:27,375 basehttp 31312 8264 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 200 264
+INFO 2025-10-08 15:36:29,950 basehttp 31312 25740 "GET /api/features/?module_id= HTTP/1.1" 200 64
+INFO 2025-10-08 15:36:42,928 basehttp 31312 33536 "GET /api/features/?module_id= HTTP/1.1" 200 64
+WARNING 2025-10-08 15:36:50,811 log 31312 4776 Method Not Allowed: /api/modules/
+WARNING 2025-10-08 15:36:50,811 basehttp 31312 4776 "DELETE /api/modules/ HTTP/1.1" 405 43

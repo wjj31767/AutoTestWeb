@@ -39,27 +39,35 @@
           active-text-color="#ffffff"
           @select="handleMenuSelect"
         >
-          <el-menu-item index="home">
+          <el-menu-item index="/">
             <el-icon><house /></el-icon>
             <span>首页</span>
           </el-menu-item>
-          <el-menu-item index="env/list">
+          <el-menu-item index="/env/list">
             <el-icon><setting /></el-icon>
             <span>环境管理</span>
           </el-menu-item>
-          <el-menu-item index="task/add">
+          <el-menu-item index="/test-suite/list">
+            <el-icon><collection /></el-icon>
+            <span>测试套管理</span>
+          </el-menu-item>
+          <el-menu-item index="/task/add">
             <el-icon><plus /></el-icon>
             <span>新增任务</span>
           </el-menu-item>
-          <el-menu-item index="task/list">
+          <el-menu-item index="/task/list">
             <el-icon><list /></el-icon>
             <span>任务列表</span>
           </el-menu-item>
-          <el-menu-item index="report">
+          <el-menu-item index="/report">
             <el-icon><document /></el-icon>
             <span>报表中心</span>
           </el-menu-item>
-          <el-menu-item index="settings">
+          <el-menu-item index="/module/list">
+            <el-icon><setting /></el-icon>
+            <span>模块管理</span>
+          </el-menu-item>
+          <el-menu-item index="/settings">
             <el-icon><setting /></el-icon>
             <span>系统设置</span>
           </el-menu-item>
@@ -77,13 +85,14 @@
 <script>
 import { ref, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { 
+import {
   House, 
   Setting, 
   Plus, 
   List, 
   Document, 
-  ArrowDown 
+  ArrowDown, 
+  Collection 
 } from '@element-plus/icons-vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import axios from './api/axios'
@@ -96,7 +105,8 @@ export default {
     Plus,
     List,
     Document,
-    ArrowDown
+    ArrowDown,
+    Collection
   },
   setup() {
     const route = useRoute()

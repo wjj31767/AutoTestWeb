@@ -26,8 +26,12 @@ router = routers.DefaultRouter()
 # 导入各应用模块的 URL 配置
 from env_manager.urls import router as env_router
 from common.urls import router as common_router
+from test_suite.urls import router as test_suite_router
+from module_manager.urls import router as module_router
 router.registry.extend(env_router.registry)
 router.registry.extend(common_router.registry)
+router.registry.extend(test_suite_router.registry)
+router.registry.extend(module_router.registry)
 
 # API 根路由
 from .views import root_view

@@ -56,6 +56,9 @@ class IsAdminOrOwner(permissions.BasePermission):
             if isinstance(obj.created_by, str):
                 return str(request.user) == obj.created_by
             return obj.created_by == request.user
+        # 检查是否是creator字段（用于module和feature模型）
+        elif hasattr(obj, 'creator'):
+            return str(request.user) == obj.creator
         return False
 
 class CustomPermission(permissions.BasePermission):

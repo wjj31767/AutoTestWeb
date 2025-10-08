@@ -6,6 +6,8 @@ const Login = () => import('../views/Login.vue')
 const EnvList = () => import('../views/EnvList.vue')
 const AddTask = () => import('../views/AddTask.vue')
 const TaskDetail = () => import('../views/TaskDetail.vue')
+const TestSuiteList = () => import('../views/TestSuiteList.vue')
+const ModuleList = () => import('../views/ModuleList.vue')
 
 const routes = [
   {
@@ -51,10 +53,28 @@ const routes = [
       title: '任务结果详情',
       requiresAuth: true
     }
+  },
+  {
+    path: '/test-suite/list',
+    name: 'TestSuiteList',
+    component: TestSuiteList,
+    meta: {
+      title: '测试套列表',
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/module/list',
+    name: 'ModuleList',
+    component: ModuleList,
+    meta: {
+      title: '模块管理',
+      requiresAuth: true
+    }
   }
-]
-
-const router = createRouter({
+  ]
+  
+  const router = createRouter({
   history: createWebHistory(),
   routes
 })

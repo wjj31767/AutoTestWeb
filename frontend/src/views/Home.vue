@@ -33,6 +33,16 @@
               <div class="card-title">报表中心</div>
               <div class="card-desc">查看验证报表和统计</div>
             </el-card>
+            <el-card class="access-card" @click="handleNavigate('test-suite/list')">
+              <div class="card-icon"><el-icon><collection /></el-icon></div>
+              <div class="card-title">测试套管理</div>
+              <div class="card-desc">管理测试用例集合</div>
+            </el-card>
+            <el-card class="access-card" @click="handleNavigate('module/list')">
+              <div class="card-icon"><el-icon><setting /></el-icon></div>
+              <div class="card-title">模块管理</div>
+              <div class="card-desc">管理测试模块及其特性</div>
+            </el-card>
           </div>
         </div>
         
@@ -82,7 +92,7 @@
 <script>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { Setting, Plus, List, Document } from '@element-plus/icons-vue'
+import { Setting, Plus, List, Document, Collection } from '@element-plus/icons-vue'
 
 export default {
   name: 'Home',
@@ -90,7 +100,8 @@ export default {
     Setting,
     Plus,
     List,
-    Document
+    Document,
+    Collection
   },
   setup() {
     const router = useRouter()
