@@ -5307,3 +5307,152 @@ INFO 2025-10-08 21:34:22,144 basehttp 31260 11188 "GET /api/features/?module_id=
 INFO 2025-10-08 21:34:22,144 basehttp 31260 30036 "GET /api/testcases/?feature_id=feature-1759930199169-6528 HTTP/1.1" 200 799
 INFO 2025-10-08 21:34:36,513 basehttp 31260 30488 "PUT /api/testcases/case-1759930199330-5033/ HTTP/1.1" 200 736
 INFO 2025-10-08 21:34:36,541 basehttp 31260 33532 "GET /api/testcases/?feature_id=feature-1759930199169-6528 HTTP/1.1" 200 800
+INFO 2025-10-08 23:47:13,185 autoreload 31260 29936 E:\WorkSpace\website\AutoTestWeb\backend\execution_manager\models.py changed, reloading.
+INFO 2025-10-08 23:47:14,020 autoreload 28780 29636 Watching for file changes with StatReloader
+INFO 2025-10-08 23:47:49,549 autoreload 28780 29636 E:\WorkSpace\website\AutoTestWeb\backend\execution_manager\models.py changed, reloading.
+INFO 2025-10-08 23:47:50,346 autoreload 29424 17200 Watching for file changes with StatReloader
+INFO 2025-10-08 23:51:57,265 autoreload 29424 17200 E:\WorkSpace\website\AutoTestWeb\backend\AutoTestWeb\urls.py changed, reloading.
+INFO 2025-10-08 23:51:58,084 autoreload 22884 34444 Watching for file changes with StatReloader
+INFO 2025-10-08 23:56:11,291 basehttp 22884 34736 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-08 23:56:11,316 basehttp 22884 24300 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-08 23:56:31,468 basehttp 22884 35216 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-08 23:56:31,490 basehttp 22884 13340 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-08 23:57:13,411 basehttp 22884 29360 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-08 23:57:13,427 basehttp 22884 28212 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-08 23:57:26,652 basehttp 22884 12336 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-08 23:57:26,673 basehttp 22884 34712 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-08 23:57:53,155 basehttp 22884 28996 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-08 23:57:53,181 basehttp 22884 35280 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-08 23:58:21,460 basehttp 22884 13028 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-08 23:58:21,484 basehttp 22884 16024 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-08 23:58:32,699 basehttp 22884 28472 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-08 23:58:32,723 basehttp 22884 35720 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-08 23:58:32,734 basehttp 22884 35744 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-08 23:58:32,761 basehttp 22884 2128 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:04:07,039 basehttp 22884 14848 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:04:07,062 basehttp 22884 26396 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:04:07,291 basehttp 22884 29408 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:04:07,312 basehttp 22884 27212 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:04:19,709 basehttp 22884 26776 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:04:19,732 basehttp 22884 31376 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:04:19,917 basehttp 22884 14780 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:04:19,950 basehttp 22884 33264 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:21:30,971 basehttp 22884 29140 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:21:30,998 basehttp 22884 31840 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:22:14,593 basehttp 22884 32564 "GET /api/test_suites/?name=&visible_scope=&page=1&pageSize=10 HTTP/1.1" 200 826
+INFO 2025-10-09 00:22:19,536 basehttp 22884 9752 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:22:19,575 basehttp 22884 35764 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:25:36,091 basehttp 22884 29552 "GET /api/modules/?page=1&pageSize=100 HTTP/1.1" 200 13556
+INFO 2025-10-09 00:26:37,712 basehttp 22884 32968 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:26:37,739 basehttp 22884 30548 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:29:00,802 basehttp 22884 9500 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:29:00,829 basehttp 22884 23236 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:29:59,084 basehttp 22884 29824 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:29:59,087 basehttp 22884 26788 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:31:07,539 basehttp 22884 29244 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:31:07,549 basehttp 22884 21616 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:31:07,590 basehttp 22884 9924 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:31:07,590 basehttp 22884 13168 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:41:18,505 basehttp 22884 2500 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:41:18,534 basehttp 22884 35360 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+WARNING 2025-10-09 00:41:32,470 log 22884 15884 Bad Request: /api/tasks/
+WARNING 2025-10-09 00:41:32,470 basehttp 22884 15884 "POST /api/tasks/ HTTP/1.1" 400 83
+INFO 2025-10-09 00:44:09,110 autoreload 22884 34444 E:\WorkSpace\website\AutoTestWeb\backend\execution_manager\serializers.py changed, reloading.
+INFO 2025-10-09 00:44:09,970 autoreload 16344 29140 Watching for file changes with StatReloader
+INFO 2025-10-09 00:44:28,153 autoreload 16344 29140 E:\WorkSpace\website\AutoTestWeb\backend\execution_manager\views.py changed, reloading.
+INFO 2025-10-09 00:44:29,041 autoreload 32492 33008 Watching for file changes with StatReloader
+INFO 2025-10-09 00:45:05,434 autoreload 30212 6652 Watching for file changes with StatReloader
+WARNING 2025-10-09 00:45:45,850 log 30212 24364 Unauthorized: /api/tasks/
+WARNING 2025-10-09 00:45:45,850 basehttp 30212 24364 "POST /api/tasks/ HTTP/1.1" 401 58
+WARNING 2025-10-09 00:46:30,716 log 30212 27136 Not Found: /api/login/
+WARNING 2025-10-09 00:46:30,716 basehttp 30212 27136 "POST /api/login/ HTTP/1.1" 404 20540
+WARNING 2025-10-09 00:46:32,755 log 30212 32084 Unauthorized: /api/tasks/
+WARNING 2025-10-09 00:46:32,756 basehttp 30212 32084 "POST /api/tasks/ HTTP/1.1" 401 58
+WARNING 2025-10-09 00:47:41,024 log 30212 13500 Unauthorized: /api/user/login/
+WARNING 2025-10-09 00:47:41,024 basehttp 30212 13500 "POST /api/user/login/ HTTP/1.1" 401 36
+WARNING 2025-10-09 00:47:43,050 log 30212 31996 Unauthorized: /api/tasks/
+WARNING 2025-10-09 00:47:43,051 basehttp 30212 31996 "POST /api/tasks/ HTTP/1.1" 401 58
+INFO 2025-10-09 00:48:32,967 autoreload 30212 6652 E:\WorkSpace\website\AutoTestWeb\backend\execution_manager\views.py changed, reloading.
+INFO 2025-10-09 00:48:33,798 autoreload 32428 20816 Watching for file changes with StatReloader
+WARNING 2025-10-09 00:49:25,470 log 32428 34476 Bad Request: /api/tasks/
+WARNING 2025-10-09 00:49:25,470 basehttp 32428 34476 "POST /api/tasks/ HTTP/1.1" 400 83
+INFO 2025-10-09 00:50:58,131 autoreload 32428 20816 E:\WorkSpace\website\AutoTestWeb\backend\execution_manager\views.py changed, reloading.
+INFO 2025-10-09 00:50:59,051 autoreload 9752 30280 Watching for file changes with StatReloader
+WARNING 2025-10-09 00:51:10,898 log 9752 33812 Bad Request: /api/tasks/
+WARNING 2025-10-09 00:51:10,898 basehttp 9752 33812 "POST /api/tasks/ HTTP/1.1" 400 83
+INFO 2025-10-09 00:51:35,914 autoreload 9752 30280 E:\WorkSpace\website\AutoTestWeb\backend\execution_manager\serializers.py changed, reloading.
+INFO 2025-10-09 00:51:36,781 autoreload 13204 30948 Watching for file changes with StatReloader
+ERROR 2025-10-09 00:51:47,355 log 13204 31844 Internal Server Error: /api/tasks/
+Traceback (most recent call last):
+  File "F:\Software\python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\Software\python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Software\python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "E:\WorkSpace\website\AutoTestWeb\backend\execution_manager\views.py", line 48, in perform_create
+    task = serializer.save(
+        executor=username,
+        **data  # 确保所有必填字段都有值
+    )
+TypeError: rest_framework.serializers.BaseSerializer.save() got multiple values for keyword argument 'executor'
+ERROR 2025-10-09 00:51:47,358 basehttp 13204 31844 "POST /api/tasks/ HTTP/1.1" 500 19411
+WARNING 2025-10-09 00:53:40,610 log 13204 9256 Forbidden: /api/
+WARNING 2025-10-09 00:53:40,610 basehttp 13204 9256 "GET /api/ HTTP/1.1" 403 58
+ERROR 2025-10-09 00:53:42,658 log 13204 25928 Internal Server Error: /api/tasks/
+Traceback (most recent call last):
+  File "F:\Software\python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "F:\Software\python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "F:\Software\python313\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "F:\Software\python313\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "F:\Software\python313\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "E:\WorkSpace\website\AutoTestWeb\backend\execution_manager\views.py", line 48, in perform_create
+    task = serializer.save(
+        executor=username,
+        **data  # 确保所有必填字段都有值
+    )
+TypeError: rest_framework.serializers.BaseSerializer.save() got multiple values for keyword argument 'executor'
+ERROR 2025-10-09 00:53:42,660 basehttp 13204 25928 "POST /api/tasks/ HTTP/1.1" 500 19411
+INFO 2025-10-09 00:54:44,370 autoreload 13204 30948 E:\WorkSpace\website\AutoTestWeb\backend\execution_manager\views.py changed, reloading.
+INFO 2025-10-09 00:54:45,241 autoreload 35104 16708 Watching for file changes with StatReloader
+WARNING 2025-10-09 00:54:56,018 log 35104 9132 Forbidden: /api/
+WARNING 2025-10-09 00:54:56,019 basehttp 35104 9132 "GET /api/ HTTP/1.1" 403 58
+INFO 2025-10-09 00:54:58,317 basehttp 35104 980 "POST /api/tasks/ HTTP/1.1" 201 340
+INFO 2025-10-09 00:55:32,567 autoreload 35104 16708 E:\WorkSpace\website\AutoTestWeb\backend\execution_manager\views.py changed, reloading.
+INFO 2025-10-09 00:55:33,403 autoreload 27596 31868 Watching for file changes with StatReloader
+INFO 2025-10-09 00:55:56,031 basehttp 27596 33960 "POST /api/tasks/ HTTP/1.1" 201 340
+INFO 2025-10-09 00:56:17,881 basehttp 27596 34624 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:56:17,923 basehttp 27596 35728 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 00:56:20,261 basehttp 27596 32800 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-09 00:56:20,284 basehttp 27596 27012 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
