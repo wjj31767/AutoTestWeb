@@ -1,0 +1,77 @@
+{
+  "timestamp": "2025-10-08T10:05:04.302Z",
+  "login": {
+    "success": true,
+    "status": 200,
+    "message": "登录成功",
+    "data": {
+      "id": 2,
+      "username": "test",
+      "email": "",
+      "first_name": "",
+      "last_name": "",
+      "is_superuser": false,
+      "is_staff": false,
+      "token": "a9fda9127e19fb51533766dc89af202ed52dd44d",
+      "message": "登录成功"
+    }
+  },
+  "createTestModule": {
+    "success": false,
+    "status": null,
+    "message": "",
+    "data": null,
+    "moduleId": null
+  },
+  "createFeature": {
+    "success": false,
+    "status": null,
+    "message": "",
+    "data": null,
+    "featureId": null
+  },
+  "createTestCase": {
+    "success": false,
+    "status": null,
+    "message": "",
+    "data": null,
+    "testCaseId": null
+  },
+  "associateTestCase": {
+    "success": false,
+    "status": null,
+    "message": "",
+    "data": null
+  },
+  "updateTestCase": {
+    "success": false,
+    "status": null,
+    "message": "",
+    "data": null
+  },
+  "verifyTestCaseList": {
+    "success": false,
+    "status": null,
+    "message": "",
+    "data": null
+  },
+  "deleteTestCase": {
+    "success": false,
+    "status": null,
+    "message": ""
+  },
+  "deleteFeature": {
+    "success": false,
+    "status": null,
+    "message": ""
+  },
+  "cookies": {
+    "csrftoken": "M0m55lb4ZKSE0Hfz1eJD5BZIVmT4SBp5",
+    "sessionid": "uw84a74x7u65ugm4sy6hpci82zrz11tb"
+  },
+  "csrfToken": "M0m55lb4ZKSE0Hfz1eJD5BZIVmT4SBp5",
+  "moduleId": null,
+  "featureId": null,
+  "testCaseId": null,
+  "error": "Request failed with status code 500"
+}

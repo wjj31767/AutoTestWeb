@@ -53,7 +53,7 @@
           </el-menu-item>
           <el-menu-item index="/task/add">
             <el-icon><plus /></el-icon>
-            <span>新增任务</span>
+            <span>新增执行任务</span>
           </el-menu-item>
           <el-menu-item index="/task/list">
             <el-icon><list /></el-icon>
@@ -66,6 +66,10 @@
           <el-menu-item index="/module/list">
             <el-icon><setting /></el-icon>
             <span>模块管理</span>
+          </el-menu-item>
+          <el-menu-item index="/feature-testcase/list">
+            <el-icon><collection /></el-icon>
+            <span>特性测试用例管理</span>
           </el-menu-item>
           <el-menu-item index="/settings">
             <el-icon><setting /></el-icon>

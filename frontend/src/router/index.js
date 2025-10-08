@@ -8,6 +8,7 @@ const AddTask = () => import('../views/AddTask.vue')
 const TaskDetail = () => import('../views/TaskDetail.vue')
 const TestSuiteList = () => import('../views/TestSuiteList.vue')
 const ModuleList = () => import('../views/ModuleList.vue')
+const FeatureTestCaseList = () => import('../views/FeatureTestCaseList.vue')
 
 const routes = [
   {
@@ -69,6 +70,15 @@ const routes = [
     component: ModuleList,
     meta: {
       title: '模块管理',
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/feature-testcase/list',
+    name: 'FeatureTestCaseList',
+    component: FeatureTestCaseList,
+    meta: {
+      title: '特性测试用例管理',
       requiresAuth: true
     }
   }

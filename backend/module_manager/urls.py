@@ -1,5 +1,5 @@
 from rest_framework import routers
-from .views import ModuleViewSet, FeatureViewSet
+from .views import ModuleViewSet
 
 # 创建路由器实例
 router = routers.DefaultRouter()
@@ -9,13 +9,6 @@ router.register(
     r'modules',
     ModuleViewSet,
     basename='module'
-)
-
-# 注册特性视图集
-router.register(
-    r'features', 
-    FeatureViewSet, 
-    basename='feature'
 )
 
 # 导出路由器，供主URL配置导入

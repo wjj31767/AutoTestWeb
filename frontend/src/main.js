@@ -4,7 +4,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'element-plus/dist/index.css'
 import App from './App.vue'
 import router from './router'
-import initApiService from './api/index.js'
+import { initApiService } from './api/index.js'
 
 // 初始化API服务
 initApiService()
