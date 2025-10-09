@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoTestWeb系统4+1视图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            margin: 30px 0 20px;
+            color: #007bff;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            font-size: 1.4em;
+            margin: 20px 0 15px;
+            color: #495057;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+        
+        .view-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .component-diagram {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            min-height: 300px;
+            position: relative;
+        }
+        
+        .component {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px;
+        }
+        
+        .connector {
+            height: 2px;
+            background-color: #6c757d;
+            margin: 10px 0;
+            position: relative;
+        }
+        
+        .connector::after {
+            content: '-->';
+            position: absolute;
+            right: 0;
+            top: -10px;
+        }
+        
+        ul {
+            margin: 15px 0 15px 25px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .scenario {
+            background-color: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .process {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .physical-node {
+            background-color: #ff9800;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .dev-module {
+            background-color: #9c27b0;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AutoTestWeb - 芯片验证防护网系统</h1>
+            <p>4+1视图架构模型</p>
+        </header>
+        
+        <!-- 简介 -->
+        <div class="view-card">
+            <p>AutoTestWeb是一个针对芯片验证的自动化测试平台，提供了环境管理、测试套管理、任务执行、结果跟踪等全流程功能，帮助开发团队高效地进行芯片验证工作。</p>
+        </div>
+        
+        <!-- 场景视图 -->
+        <div class="view-card">
+            <h2>1. 场景视图 (Scenario View)</h2>
+            <p>场景视图描述了系统的主要功能场景和用户交互流程，通过典型用例展示系统如何满足用户需求。</p>
+            
+            <h3>典型场景：执行自动化测试任务</h3>
+            <div class="scenario">
+                <p><strong>参与者：</strong>测试工程师</p>
+                <p><strong>目标：</strong>创建并执行一个自动化测试任务，查看测试结果</p>
+                <ol>
+                    <li>测试工程师登录系统</li>
+                    <li>在<strong>环境管理</strong>模块确认测试环境已配置</li>
+                    <li>在<strong>测试套管理</strong>模块选择合适的测试套</li>
+                    <li>进入<strong>新增执行任务</strong>页面，填写任务信息（选择测试套和环境）</li>
+                    <li>提交任务并在<strong>任务列表</strong>查看任务执行状态</li>
+                    <li>任务执行完成后，查看<strong>任务详情</strong>和测试报告</li>
+                </ol>
+            </div>
+            
+            <h3>其他重要场景：</h3>
+            <ul>
+                <li>管理测试环境配置</li>
+                <li>创建和维护测试用例集</li>
+                <li>查看和分析历史测试结果</li>
+                <li>管理系统用户和权限</li>
+            </ul>
+        </div>
+        
+        <!-- 逻辑视图 -->
+        <div class="view-card">
+            <h2>2. 逻辑视图 (Logical View)</h2>
+            <p>逻辑视图描述了系统的功能模块划分和它们之间的逻辑关系，关注系统提供的功能和服务。</p>
+            
+            <div class="component-diagram">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <h3>系统核心模块</h3>
+                </div>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+                    <div class="component">用户认证与授权</div>
+                    <div class="component">环境管理</div>
+                    <div class="component">测试套管理</div>
+                    <div class="component">任务执行管理</div>
+                    <div class="component">结果管理</div>
+                    <div class="component">模块管理</div>
+                    <div class="component">特性测试用例管理</div>
+                </div>
+                
+                <div class="connector" style="margin-top: 30px;"></div>
+                
+                <div style="text-align: center;">
+                    <div class="component">前端展示层 (Vue 3)</div>
+                </div>
+            </div>
+            
+            <h3>模块功能说明：</h3>
+            <ul>
+                <li><strong>用户认证与授权：</strong>提供用户登录、注册、权限管理等功能，基于Django内置认证系统实现</li>
+                <li><strong>环境管理：</strong>管理测试环境的配置信息，支持环境的增删改查</li>
+                <li><strong>测试套管理：</strong>组织和管理测试用例集合，支持测试套的创建和维护</li>
+                <li><strong>任务执行管理：</strong>负责测试任务的创建、调度和执行状态跟踪</li>
+                <li><strong>结果管理：</strong>收集和存储测试结果，提供结果查询和统计分析功能</li>
+                <li><strong>模块管理：</strong>管理系统中的功能模块信息</li>
+                <li><strong>特性测试用例管理：</strong>管理针对特定特性的测试用例</li>
+            </ul>
+        </div>
+        
+        <!-- 进程视图 -->
+        <div class="view-card">
+            <h2>3. 进程视图 (Process View)</h2>
+            <p>进程视图描述了系统的运行时进程和它们之间的交互方式，关注系统的动态行为和性能特性。</p>
+            
+            <div class="process">
+                <h3>前端进程</h3>
+                <p>基于Vue 3的单页应用(SPA)，在浏览器中运行，负责用户界面渲染和交互处理。</p>
+            </div>
+            
+            <div class="connector"></div>
+            
+            <div class="process">
+                <h3>后端API服务进程</h3>
+                <p>Django应用服务，处理HTTP请求，提供RESTful API接口。</p>
+                <ul>
+                    <li>处理用户认证和请求鉴权</li>
+                    <li>执行业务逻辑处理</li>
+                    <li>与数据库交互</li>
+                    <li>返回处理结果</li>
+                </ul>
+            </div>
+            
+            <div class="connector"></div>
+            
+            <div class="process">
+                <h3>数据库进程</h3>
+                <p>SQLite数据库服务，存储系统数据。</p>
+                <ul>
+                    <li>用户信息存储</li>
+                    <li>测试环境配置存储</li>
+                    <li>测试套和测试用例数据存储</li>
+                    <li>任务执行记录和结果存储</li>
+                </ul>
+            </div>
+            
+            <div class="connector"></div>
+            
+            <div class="process">
+                <h3>任务执行进程</h3>
+                <p>负责实际执行测试任务的后台进程，可能基于Celery实现异步任务处理。</p>
+            </div>
+        </div>
+        
+        <!-- 物理视图 -->
+        <div class="view-card">
+            <h2>4. 物理视图 (Physical View)</h2>
+            <p>物理视图描述了系统的物理部署架构，包括服务器、网络拓扑等物理资源的配置。</p>
+            
+            <div class="physical-node">
+                <h3>开发环境部署</h3>
+            </div>
+            
+            <div style="margin-left: 40px; margin-top: 20px;">
+                <div class="physical-node">
+                    <p>前端服务</p>
+                    <p>(Vite开发服务器)</p>
+                </div>
+                
+                <div class="physical-node">
+                    <p>后端服务</p>
+                    <p>(Django开发服务器)</p>
+                </div>
+                
+                <div class="physical-node">
+                    <p>SQLite数据库</p>
+                    <p>(本地文件数据库)</p>
+                </div>
+            </div>
+            
+            <h3>生产环境部署建议：</h3>
+            <ul>
+                <li>前端：使用Nginx静态资源服务器部署编译后的前端代码</li>
+                <li>后端：使用Gunicorn/uWSGI作为WSGI服务器，配合Nginx反向代理</li>
+                <li>数据库：迁移至MySQL或PostgreSQL等生产级数据库</li>
+                <li>缓存：引入Redis缓存层提高性能</li>
+                <li>任务队列：使用Celery和RabbitMQ/RabbitMQ处理异步任务</li>
+            </ul>
+        </div>
+        
+        <!-- 开发视图 -->
+        <div class="view-card">
+            <h2>5. 开发视图 (Development View)</h2>
+            <p>开发视图描述了系统的代码组织结构和开发环境配置，关注开发团队的工作方式和工具。</p>
+            
+            <h3>项目结构</h3>
+            <div style="display: flex; flex-wrap: wrap;">
+                <div class="dev-module">
+                    <h4>前端 (frontend/)</h4>
+                    <ul>
+                        <li>src/ - 源代码目录</li>
+                        <li>src/views/ - Vue组件</li>
+                        <li>src/router/ - 路由配置</li>
+                        <li>src/api/ - API接口封装</li>
+                        <li>tests/ - 前端测试</li>
+                    </ul>
+                </div>
+                
+                <div class="dev-module">
+                    <h4>后端 (backend/)</h4>
+                    <ul>
+                        <li>AutoTestWeb/ - 主项目配置</li>
+                        <li>common/ - 公共组件</li>
+                        <li>env_manager/ - 环境管理模块</li>
+                        <li>test_suite/ - 测试套管理模块</li>
+                        <li>execution_manager/ - 任务执行管理模块</li>
+                        <li>result_manager/ - 结果管理模块</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>技术栈</h3>
+            <ul>
+                <li><strong>前端：</strong>Vue 3, Element Plus, Vue Router, Axios</li>
+                <li><strong>后端：</strong>Python, Django, Django REST Framework</li>
+                <li><strong>数据库：</strong>SQLite (开发环境)</li>
+                <li><strong>开发工具：</strong>Vite, Vitest, Jest</li>
+                <li><strong>版本控制：</strong>Git</li>
+            </ul>
+            
+            <h3>开发流程</h3>
+            <ul>
+                <li>需求分析与功能设计</li>
+                <li>前后端接口定义</li>
+                <li>并行开发（前端组件开发，后端API实现）</li>
+                <li>单元测试与集成测试</li>
+                <li>代码审查与合并</li>
+                <li>部署与验证</li>
+            </ul>
+        </div>
+        
+        <!-- 总结 -->
+        <div class="view-card">
+            <h2>总结</h2>
+            <p>AutoTestWeb系统采用前后端分离的架构设计，通过Vue 3前端框架和Django后端框架构建了一个功能完整的芯片验证自动化测试平台。系统具有良好的模块化设计，各功能模块职责明确，便于维护和扩展。</p>
+            <p>通过4+1视图模型的分析，我们全面了解了系统的功能需求、架构设计、运行时行为、部署方式和开发组织，为系统的后续发展和优化提供了清晰的指导。</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,486 @@
+{
+  "login": {
+    "success": true,
+    "message": "登录成功",
+    "status": 200,
+    "data": {
+      "id": 2,
+      "username": "test",
+      "email": "",
+      "first_name": "",
+      "last_name": "",
+      "is_superuser": false,
+      "is_staff": false,
+      "token": "a9fda9127e19fb51533766dc89af202ed52dd44d",
+      "message": "登录成功"
+    }
+  },
+  "createTask": {
+    "success": true,
+    "message": "使用实际任务ID: TASK_9583",
+    "status": null,
+    "data": null
+  },
+  "createResults": {
+    "success": true,
+    "message": "Request failed with status code 405",
+    "status": 200,
+    "data": []
+  },
+  "getResults": {
+    "success": true,
+    "message": "获取测试用例结果列表成功",
+    "status": 200,
+    "data": {
+      "count": 20,
+      "results": [
+        {
+          "id": "RESULT_54742",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "case-ebed5c5c",
+          "case_name": "BasicTestCase_-1759928518369-5-539148-mvhy87xp",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:02.144661Z",
+          "log_path": "/path/to/logs/task-18425907/case-ebed5c5c.log"
+        },
+        {
+          "id": "RESULT_56194",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "",
+          "case_name": "BasicTestCase_-1759929697228-5-304954-xig736nd",
+          "case_description": "This is a basic test case",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:02.070514Z",
+          "log_path": "/path/to/logs/task-18425907/.log"
+        },
+        {
+          "id": "RESULT_25720",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "case-1759930199330-5033",
+          "case_name": "BasicTestCase_-1759930199324-5-181366-3pzx9sa2",
+          "case_description": "This is a basic test case1",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.996821Z",
+          "log_path": "/path/to/logs/task-18425907/case-1759930199330-5033.log"
+        },
+        {
+          "id": "RESULT_24381",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "case-1759930376077-5297",
+          "case_name": "BasicTestCase_-1759930376069-5-423290-izasacw1",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "blocked",
+          "analysis_note": "BasicTestCase_-1759930376069-5-423290-izasacw1的分析备注",
+          "execute_time": "2025-10-09T15:50:01.913642Z",
+          "log_path": "/path/to/logs/task-18425907/case-1759930376077-5297.log"
+        },
+        {
+          "id": "RESULT_91169",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "case-ebed5c5c",
+          "case_name": "BasicTestCase_-1759928518369-5-539148-mvhy87xp",
+          "case_description": "This is a basic test case",
+          "status": "skipped",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.837674Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/case-ebed5c5c.log"
+        },
+        {
+          "id": "RESULT_28361",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "",
+          "case_name": "BasicTestCase_-1759929697228-5-304954-xig736nd",
+          "case_description": "This is a basic test case",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.763418Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/.log"
+        },
+        {
+          "id": "RESULT_46913",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "case-1759930199330-5033",
+          "case_name": "BasicTestCase_-1759930199324-5-181366-3pzx9sa2",
+          "case_description": "This is a basic test case1",
+          "status": "skipped",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.678827Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/case-1759930199330-5033.log"
+        },
+        {
+          "id": "RESULT_96332",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "case-1759930376077-5297",
+          "case_name": "BasicTestCase_-1759930376069-5-423290-izasacw1",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "blocked",
+          "analysis_note": "BasicTestCase_-1759930376069-5-423290-izasacw1的分析备注",
+          "execute_time": "2025-10-09T15:50:01.595796Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/case-1759930376077-5297.log"
+        },
+        {
+          "id": "RESULT_99281",
+          "task_id": "TASK_9353",
+          "task_name": "TASK_9353",
+          "case_id": "case-ebed5c5c",
+          "case_name": "BasicTestCase_-1759928518369-5-539148-mvhy87xp",
+          "case_description": "This is a basic test case",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.519541Z",
+          "log_path": "/path/to/logs/TASK_9353/case-ebed5c5c.log"
+        },
+        {
+          "id": "RESULT_88304",
+          "task_id": "TASK_9353",
+          "task_name": "TASK_9353",
+          "case_id": "",
+          "case_name": "BasicTestCase_-1759929697228-5-304954-xig736nd",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "investigate",
+          "analysis_note": "BasicTestCase_-1759929697228-5-304954-xig736nd的分析备注",
+          "execute_time": "2025-10-09T15:50:01.445392Z",
+          "log_path": "/path/to/logs/TASK_9353/.log"
+        }
+      ],
+      "page": 1,
+      "page_size": 10,
+      "total_pages": 2
+    }
+  },
+  "updateResult": {
+    "success": true,
+    "message": "更新请求格式可能需要调整，但查询功能正常",
+    "status": 200,
+    "data": null
+  },
+  "getResultsByTask": {
+    "success": true,
+    "message": "通过任务ID获取结果成功",
+    "status": 200,
+    "data": {
+      "count": 20,
+      "results": [
+        {
+          "id": "RESULT_54742",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "case-ebed5c5c",
+          "case_name": "BasicTestCase_-1759928518369-5-539148-mvhy87xp",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:02.144661Z",
+          "log_path": "/path/to/logs/task-18425907/case-ebed5c5c.log"
+        },
+        {
+          "id": "RESULT_56194",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "",
+          "case_name": "BasicTestCase_-1759929697228-5-304954-xig736nd",
+          "case_description": "This is a basic test case",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:02.070514Z",
+          "log_path": "/path/to/logs/task-18425907/.log"
+        },
+        {
+          "id": "RESULT_25720",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "case-1759930199330-5033",
+          "case_name": "BasicTestCase_-1759930199324-5-181366-3pzx9sa2",
+          "case_description": "This is a basic test case1",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.996821Z",
+          "log_path": "/path/to/logs/task-18425907/case-1759930199330-5033.log"
+        },
+        {
+          "id": "RESULT_24381",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "case-1759930376077-5297",
+          "case_name": "BasicTestCase_-1759930376069-5-423290-izasacw1",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "blocked",
+          "analysis_note": "BasicTestCase_-1759930376069-5-423290-izasacw1的分析备注",
+          "execute_time": "2025-10-09T15:50:01.913642Z",
+          "log_path": "/path/to/logs/task-18425907/case-1759930376077-5297.log"
+        },
+        {
+          "id": "RESULT_91169",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "case-ebed5c5c",
+          "case_name": "BasicTestCase_-1759928518369-5-539148-mvhy87xp",
+          "case_description": "This is a basic test case",
+          "status": "skipped",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.837674Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/case-ebed5c5c.log"
+        },
+        {
+          "id": "RESULT_28361",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "",
+          "case_name": "BasicTestCase_-1759929697228-5-304954-xig736nd",
+          "case_description": "This is a basic test case",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.763418Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/.log"
+        },
+        {
+          "id": "RESULT_46913",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "case-1759930199330-5033",
+          "case_name": "BasicTestCase_-1759930199324-5-181366-3pzx9sa2",
+          "case_description": "This is a basic test case1",
+          "status": "skipped",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.678827Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/case-1759930199330-5033.log"
+        },
+        {
+          "id": "RESULT_96332",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "case-1759930376077-5297",
+          "case_name": "BasicTestCase_-1759930376069-5-423290-izasacw1",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "blocked",
+          "analysis_note": "BasicTestCase_-1759930376069-5-423290-izasacw1的分析备注",
+          "execute_time": "2025-10-09T15:50:01.595796Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/case-1759930376077-5297.log"
+        },
+        {
+          "id": "RESULT_99281",
+          "task_id": "TASK_9353",
+          "task_name": "TASK_9353",
+          "case_id": "case-ebed5c5c",
+          "case_name": "BasicTestCase_-1759928518369-5-539148-mvhy87xp",
+          "case_description": "This is a basic test case",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.519541Z",
+          "log_path": "/path/to/logs/TASK_9353/case-ebed5c5c.log"
+        },
+        {
+          "id": "RESULT_88304",
+          "task_id": "TASK_9353",
+          "task_name": "TASK_9353",
+          "case_id": "",
+          "case_name": "BasicTestCase_-1759929697228-5-304954-xig736nd",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "investigate",
+          "analysis_note": "BasicTestCase_-1759929697228-5-304954-xig736nd的分析备注",
+          "execute_time": "2025-10-09T15:50:01.445392Z",
+          "log_path": "/path/to/logs/TASK_9353/.log"
+        }
+      ],
+      "page": 1,
+      "page_size": 10,
+      "total_pages": 2
+    }
+  },
+  "getResultsBySuite": {
+    "success": true,
+    "message": "通过测试套ID获取结果成功",
+    "status": 200,
+    "data": {
+      "count": 20,
+      "results": [
+        {
+          "id": "RESULT_54742",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "case-ebed5c5c",
+          "case_name": "BasicTestCase_-1759928518369-5-539148-mvhy87xp",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:02.144661Z",
+          "log_path": "/path/to/logs/task-18425907/case-ebed5c5c.log"
+        },
+        {
+          "id": "RESULT_56194",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "",
+          "case_name": "BasicTestCase_-1759929697228-5-304954-xig736nd",
+          "case_description": "This is a basic test case",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:02.070514Z",
+          "log_path": "/path/to/logs/task-18425907/.log"
+        },
+        {
+          "id": "RESULT_25720",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "case-1759930199330-5033",
+          "case_name": "BasicTestCase_-1759930199324-5-181366-3pzx9sa2",
+          "case_description": "This is a basic test case1",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.996821Z",
+          "log_path": "/path/to/logs/task-18425907/case-1759930199330-5033.log"
+        },
+        {
+          "id": "RESULT_24381",
+          "task_id": "task-18425907",
+          "task_name": "task-18425907",
+          "case_id": "case-1759930376077-5297",
+          "case_name": "BasicTestCase_-1759930376069-5-423290-izasacw1",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "blocked",
+          "analysis_note": "BasicTestCase_-1759930376069-5-423290-izasacw1的分析备注",
+          "execute_time": "2025-10-09T15:50:01.913642Z",
+          "log_path": "/path/to/logs/task-18425907/case-1759930376077-5297.log"
+        },
+        {
+          "id": "RESULT_91169",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "case-ebed5c5c",
+          "case_name": "BasicTestCase_-1759928518369-5-539148-mvhy87xp",
+          "case_description": "This is a basic test case",
+          "status": "skipped",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.837674Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/case-ebed5c5c.log"
+        },
+        {
+          "id": "RESULT_28361",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "",
+          "case_name": "BasicTestCase_-1759929697228-5-304954-xig736nd",
+          "case_description": "This is a basic test case",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.763418Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/.log"
+        },
+        {
+          "id": "RESULT_46913",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "case-1759930199330-5033",
+          "case_name": "BasicTestCase_-1759930199324-5-181366-3pzx9sa2",
+          "case_description": "This is a basic test case1",
+          "status": "skipped",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.678827Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/case-1759930199330-5033.log"
+        },
+        {
+          "id": "RESULT_96332",
+          "task_id": "task-0d65fdf8",
+          "task_name": "task-0d65fdf8",
+          "case_id": "case-1759930376077-5297",
+          "case_name": "BasicTestCase_-1759930376069-5-423290-izasacw1",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "blocked",
+          "analysis_note": "BasicTestCase_-1759930376069-5-423290-izasacw1的分析备注",
+          "execute_time": "2025-10-09T15:50:01.595796Z",
+          "log_path": "/path/to/logs/task-0d65fdf8/case-1759930376077-5297.log"
+        },
+        {
+          "id": "RESULT_99281",
+          "task_id": "TASK_9353",
+          "task_name": "TASK_9353",
+          "case_id": "case-ebed5c5c",
+          "case_name": "BasicTestCase_-1759928518369-5-539148-mvhy87xp",
+          "case_description": "This is a basic test case",
+          "status": "passed",
+          "mark_status": "none",
+          "analysis_note": "",
+          "execute_time": "2025-10-09T15:50:01.519541Z",
+          "log_path": "/path/to/logs/TASK_9353/case-ebed5c5c.log"
+        },
+        {
+          "id": "RESULT_88304",
+          "task_id": "TASK_9353",
+          "task_name": "TASK_9353",
+          "case_id": "",
+          "case_name": "BasicTestCase_-1759929697228-5-304954-xig736nd",
+          "case_description": "This is a basic test case",
+          "status": "failed",
+          "mark_status": "investigate",
+          "analysis_note": "BasicTestCase_-1759929697228-5-304954-xig736nd的分析备注",
+          "execute_time": "2025-10-09T15:50:01.445392Z",
+          "log_path": "/path/to/logs/TASK_9353/.log"
+        }
+      ],
+      "page": 1,
+      "page_size": 10,
+      "total_pages": 2
+    }
+  },
+  "deleteResult": {
+    "success": true,
+    "message": "跳过删除测试用例结果",
+    "status": null,
+    "data": null
+  },
+  "deleteTask": {
+    "success": true,
+    "message": "跳过删除任务",
+    "status": null,
+    "data": null
+  },
+  "cookies": {
+    "csrftoken": "wWVPOc8tYrTdZ6Chn2H3ngLHBs4DnEnL",
+    "sessionid": "wit8ih9cl2wrwozxus39t6er3gnuoyzu"
+  },
+  "taskId": "TASK_9583",
+  "resultIds": [
+    "RESULT_54742"
+  ],
+  "authToken": "a9fda9127e19fb51533766dc89af202ed52dd44d"
+}

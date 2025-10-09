@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoTestWeb系统架构图 - Mermaid版本</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #555;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .mermaid {
+            text-align: center;
+            margin: 30px 0;
+            background-color: white;
+            padding: 20px;
+            border-radius: 4px;
+            overflow-x: auto;
+            display: block;
+        }
+        .section {
+            margin-bottom: 40px;
+            background-color: white;
+        }
+        .description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AutoTestWeb系统架构图 - Mermaid版本</h1>
+        
+        <div class="section">
+            <h2>1. 系统整体架构 - 逻辑视图</h2>
+            <div class="description">
+                逻辑视图描述系统的功能和逻辑组件，展示系统如何满足功能需求。此处展示AutoTestWeb系统的整体分层架构，包括前端、后端API服务、数据库及各模块间的交互关系。
+            </div>
+            <div class="mermaid">
+                graph TD
+                    subgraph "前端层"
+                        A[Vue 3前端应用]
+                        B[Element Plus UI组件]
+                        C[Axios HTTP客户端]
+                    end
+                    
+                    subgraph "API网关层"
+                        D[Django REST Framework]
+                        E[认证与授权]
+                    end
+                    
+                    subgraph "业务服务层"
+                        F[execution_manager\n执行管理]
+                        G[task_manager\n任务管理]
+                        H[test_suite\n测试套件管理]
+                        I[env_manager\n环境管理]
+                        J[feature_testcase\n特性测试用例]
+                        K[result_manager\n结果管理]
+                        L[module_manager\n模块管理]
+                    end
+                    
+                    subgraph "数据持久层"
+                        M[(SQLite/MySQL数据库)]
+                        N[文件存储\n测试结果/日志]
+                    end
+                    
+                    A -->|HTTP请求| D
+                    A --> B
+                    A --> C
+                    C -->|API调用| D
+                    D --> E
+                    D --> F
+                    D --> G
+                    D --> H
+                    D --> I
+                    D --> J
+                    D --> K
+                    D --> L
+                    F --> M
+                    G --> M
+                    H --> M
+                    I --> M
+                    J --> M
+                    K --> M
+                    K --> N
+                    L --> M
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>2. 测试任务执行流程图 - 场景视图</h2>
+            <div class="description">
+                场景视图描述系统的关键用例和流程，展示用户与系统的交互。此处展示测试任务从创建到执行完成的完整流程，包括任务调度、环境准备、测试执行和结果处理。
+            </div>
+            <div class="mermaid">
+                sequenceDiagram
+                    participant 用户
+                    participant 前端
+                    participant 任务管理
+                    participant 执行管理
+                    participant 测试套件
+                    participant 环境管理
+                    participant 结果管理
+                    
+                    用户 ->> 前端: 创建测试任务
+                    前端 ->> 任务管理: 提交任务请求
+                    任务管理 ->> 执行管理: 调度测试执行
+                    执行管理 ->> 测试套件: 获取测试套件
+                    执行管理 ->> 环境管理: 获取测试环境
+                    测试套件 ->> 执行管理: 返回测试用例
+                    环境管理 ->> 执行管理: 返回环境配置
+                    执行管理 ->> 执行管理: 执行测试
+                    执行管理 ->> 结果管理: 保存测试结果
+                    结果管理 ->> 任务管理: 更新任务状态
+                    任务管理 ->> 前端: 返回任务结果
+                    前端 ->> 用户: 展示任务结果
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>3. 数据库实体关系图 - 逻辑视图</h2>
+            <div class="description">
+                逻辑视图补充，描述系统的数据模型和实体关系。此处展示系统核心数据实体之间的关系，包括外键关联和一对多/多对一关系。
+            </div>
+            <div class="mermaid">
+                erDiagram
+                    Environment ||--o{ TaskExecution : has
+                    TestSuite ||--o{ TaskExecution : has
+                    Module ||--o{ TestSuite : contains
+                    Module ||--o{ FeatureTestCase : contains
+                    TestSuite ||--o{ FeatureTestCase : includes
+                    TaskExecution ||--o{ TestResult : generates
+                    
+                    Environment {
+                        string name "环境名称"
+                        string url "环境URL"
+                        string description "环境描述"
+                    }
+                    
+                    TestSuite {
+                        string name "测试套件名称"
+                        string description "测试套件描述"
+                        string module_id "所属模块ID"
+                    }
+                    
+                    Module {
+                        string name "模块名称"
+                        string description "模块描述"
+                    }
+                    
+                    FeatureTestCase {
+                        string name "测试用例名称"
+                        string steps "测试步骤"
+                        string expected_result "预期结果"
+                        string module_id "所属模块ID"
+                        string suite_id "所属测试套件ID"
+                    }
+                    
+                    TaskExecution {
+                        string id "任务ID"
+                        string suite_id "测试套件ID"
+                        string env_id "环境ID"
+                        string status "任务状态"
+                        datetime start_time "开始时间"
+                        datetime end_time "结束时间"
+                        string executor "执行人"
+                        int total_case "总用例数"
+                        int success_case "成功用例数"
+                    }
+                    
+                    TestResult {
+                        string id "结果ID"
+                        string task_id "任务ID"
+                        string case_id "用例ID"
+                        string status "测试状态"
+                        string error_message "错误信息"
+                        datetime execution_time "执行时间"
+                    }
+            </div>
+        </div>
+        
+        </div>
+        
+        <div class="section">
+            <h2>4. 系统部署架构图 - 物理视图</h2>
+            <div class="description">
+                物理视图（也称为部署视图）描述系统的物理部署方式和硬件资源分配。此处展示系统在生产环境中的部署架构，包括负载均衡、服务冗余和数据存储方案。
+            </div>
+            <div class="mermaid">
+                graph TD
+                    subgraph "客户端层"
+                        A[用户浏览器]
+                        B[CI/CD系统]
+                    end
+                    
+                    subgraph "负载均衡层"
+                        C[Nginx负载均衡]
+                    end
+                    
+                    subgraph "应用服务层"
+                        D[Django应用实例1]
+                        E[Django应用实例2]
+                        F[前端静态资源]
+                    end
+                    
+                    subgraph "数据服务层"
+                        G[(MySQL主数据库)]
+                        H[(MySQL从数据库)]
+                        I[Redis缓存]
+                        J[文件存储]
+                    end
+                    
+                    subgraph "辅助服务层"
+                        K[Celery任务队列]
+                        L[RabbitMQ消息中间件]
+                        M[日志服务]
+                    end
+                    
+                    A -->|HTTP请求| C
+                    B -->|触发测试| C
+                    C -->|API请求| D
+                    C -->|API请求| E
+                    C -->|静态资源| F
+                    D -->|读写数据| G
+                    E -->|读写数据| G
+                    G -->|数据同步| H
+                    D -->|缓存数据| I
+                    E -->|缓存数据| I
+                    D -->|异步任务| K
+                    E -->|异步任务| K
+                    K -->|消息队列| L
+                    D -->|存储文件| J
+                    E -->|存储文件| J
+                    D -->|写入日志| M
+                    E -->|写入日志| M
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>5. 项目结构视图 - 开发视图</h2>
+            <div class="description">
+                开发视图描述系统的代码组织和开发环境。此处展示系统的项目结构和开发组织，包括前端和后端的目录结构、模块划分和技术栈。
+            </div>
+            <div class="mermaid">
+                graph TD
+                    subgraph "项目根目录"
+                        A[frontend\n前端项目]
+                        B[backend\n后端项目]
+                        C[README.md\n项目说明]
+                        D[系统文档\n架构图/设计文档]
+                    end
+                    
+                    subgraph "前端项目结构"
+                        A1[src\n源代码目录]
+                        A2[public\n静态资源]
+                        A3[tests\n测试代码]
+                        A4[package.json\n依赖配置]
+                    end
+                    
+                    subgraph "前端源码结构"
+                        A1_1[views\n页面组件]
+                        A1_2[components\n公共组件]
+                        A1_3[api\nAPI服务]
+                        A1_4[router\n路由配置]
+                        A1_5[App.vue\n主应用组件]
+                        A1_6[main.js\n入口文件]
+                    end
+                    
+                    subgraph "后端项目结构"
+                        B1[AutoTestWeb\n主配置]
+                        B2[common\n公共模块]
+                        B3[env_manager\n环境管理]
+                        B4[execution_manager\n执行管理]
+                        B5[task_manager\n任务管理]
+                        B6[test_suite\n测试套件]
+                        B7[feature_testcase\n特性测试用例]
+                        B8[result_manager\n结果管理]
+                        B9[module_manager\n模块管理]
+                        B10[manage.py\n管理脚本]
+                        B11[requirements.txt\n依赖配置]
+                    end
+                    
+                    subgraph "后端模块结构"
+                        M1[models.py\n数据模型]
+                        M2[views.py\n视图逻辑]
+                        M3[serializers.py\n序列化器]
+                        M4[urls.py\n路由配置]
+                        M5[tests.py\n单元测试]
+                    end
+                    
+                    A --> A1
+                    A --> A2
+                    A --> A3
+                    A --> A4
+                    A1 --> A1_1
+                    A1 --> A1_2
+                    A1 --> A1_3
+                    A1 --> A1_4
+                    A1 --> A1_5
+                    A1 --> A1_6
+                    
+                    B --> B1
+                    B --> B2
+                    B --> B3
+                    B --> B4
+                    B --> B5
+                    B --> B6
+                    B --> B7
+                    B --> B8
+                    B --> B9
+                    B --> B10
+                    B --> B11
+                    
+                    B3 --> M1
+                    B3 --> M2
+                    B3 --> M3
+                    B3 --> M4
+                    B3 --> M5
+                    
+                    B4 --> M1
+                    B4 --> M2
+                    B4 --> M3
+                    B4 --> M4
+                    B4 --> M5
+                    
+                    B5 --> M1
+                    B5 --> M2
+                    B5 --> M4
+                    B5 --> M5
+                    
+                    B6 --> M1
+                    B6 --> M2
+                    B6 --> M3
+                    B6 --> M4
+                    B6 --> M5
+                    
+                    B7 --> M1
+                    B7 --> M2
+                    B7 --> M4
+                    B7 --> M5
+                    
+                    B8 --> M1
+                    B8 --> M2
+                    B8 --> M4
+                    B8 --> M5
+                    
+                    B9 --> M1
+                    B9 --> M2
+                    B9 --> M4
+                    B9 --> M5
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                nodeSpacing: 20,
+                rankSpacing: 30,
+                curve: 'linear'
+            },
+            sequence: {
+                useMaxWidth: true,
+                noteAlign: 'center'
+            }
+        });
+    </script>
+</body>
+</html>
