@@ -5456,3 +5456,117 @@ INFO 2025-10-09 00:56:17,881 basehttp 27596 34624 "GET /api/test_suites/?page=1&
 INFO 2025-10-09 00:56:17,923 basehttp 27596 35728 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
 INFO 2025-10-09 00:56:20,261 basehttp 27596 32800 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
 INFO 2025-10-09 00:56:20,284 basehttp 27596 27012 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-09 23:31:00,891 autoreload 13620 31320 Watching for file changes with StatReloader
+INFO 2025-10-09 23:37:33,666 autoreload 13620 31320 E:\WorkSpace\website\AutoTestWeb\backend\result_manager\models.py changed, reloading.
+INFO 2025-10-09 23:37:34,886 autoreload 11100 17072 Watching for file changes with StatReloader
+INFO 2025-10-09 23:40:07,889 autoreload 11100 17072 E:\WorkSpace\website\AutoTestWeb\backend\AutoTestWeb\urls.py changed, reloading.
+INFO 2025-10-09 23:40:09,020 autoreload 28500 22984 Watching for file changes with StatReloader
+INFO 2025-10-10 00:02:32,114 basehttp 28500 18448 "POST /api/user/login/ HTTP/1.1" 200 182
+WARNING 2025-10-10 00:02:32,133 log 28500 32648 Forbidden: /api/tasks/
+WARNING 2025-10-10 00:02:32,134 basehttp 28500 32648 "POST /api/tasks/ HTTP/1.1" 403 45
+WARNING 2025-10-10 00:05:49,522 log 28500 17244 Method Not Allowed: /api/user/login/
+WARNING 2025-10-10 00:05:49,522 basehttp 28500 17244 "GET /api/user/login/ HTTP/1.1" 405 40
+INFO 2025-10-10 00:05:50,837 basehttp 28500 17244 "POST /api/user/login/ HTTP/1.1" 200 182
+WARNING 2025-10-10 00:05:50,841 log 28500 17244 Unauthorized: /api/tasks/
+WARNING 2025-10-10 00:05:50,841 basehttp 28500 17244 "GET /api/tasks/ HTTP/1.1" 401 58
+WARNING 2025-10-10 00:09:27,474 log 28500 22096 Method Not Allowed: /api/user/login/
+WARNING 2025-10-10 00:09:27,474 basehttp 28500 22096 "GET /api/user/login/ HTTP/1.1" 405 40
+INFO 2025-10-10 00:09:28,850 basehttp 28500 22096 "POST /api/user/login/ HTTP/1.1" 200 182
+WARNING 2025-10-10 00:09:28,861 log 28500 22096 Bad Request: /api/results/
+WARNING 2025-10-10 00:09:28,861 basehttp 28500 22096 "POST /api/results/ HTTP/1.1" 400 151
+WARNING 2025-10-10 00:09:28,870 log 28500 22096 Bad Request: /api/results/
+WARNING 2025-10-10 00:09:28,870 basehttp 28500 22096 "POST /api/results/ HTTP/1.1" 400 198
+WARNING 2025-10-10 00:09:28,880 log 28500 22096 Bad Request: /api/results/
+WARNING 2025-10-10 00:09:28,881 basehttp 28500 22096 "POST /api/results/ HTTP/1.1" 400 151
+INFO 2025-10-10 00:14:13,088 basehttp 28500 30372 "POST /api/user/login/ HTTP/1.1" 200 182
+WARNING 2025-10-10 00:14:13,106 log 28500 30372 Bad Request: /api/results/
+WARNING 2025-10-10 00:14:13,106 basehttp 28500 30372 "POST /api/results/ HTTP/1.1" 400 150
+WARNING 2025-10-10 00:14:13,116 log 28500 30372 Bad Request: /api/results/
+WARNING 2025-10-10 00:14:13,117 basehttp 28500 30372 "POST /api/results/ HTTP/1.1" 400 198
+WARNING 2025-10-10 00:14:13,128 log 28500 30372 Bad Request: /api/results/
+WARNING 2025-10-10 00:14:13,128 basehttp 28500 30372 "POST /api/results/ HTTP/1.1" 400 197
+INFO 2025-10-10 00:16:08,870 basehttp 28500 27524 "POST /api/user/login/ HTTP/1.1" 200 182
+INFO 2025-10-10 00:16:08,894 basehttp 28500 27524 "GET /api/tasks/ HTTP/1.1" 200 1890
+INFO 2025-10-10 00:16:08,912 basehttp 28500 27524 "GET /api/results/ HTTP/1.1" 200 3962
+INFO 2025-10-10 00:16:08,922 basehttp 28500 27524 "GET /api/results/RESULT_54742/ HTTP/1.1" 200 371
+WARNING 2025-10-10 00:16:08,930 log 28500 27524 Bad Request: /api/results/RESULT_54742/
+WARNING 2025-10-10 00:16:08,930 basehttp 28500 27524 "PUT /api/results/RESULT_54742/ HTTP/1.1" 400 53
+INFO 2025-10-10 00:19:11,346 basehttp 28500 26776 "POST /api/user/login/ HTTP/1.1" 200 182
+INFO 2025-10-10 00:19:11,369 basehttp 28500 26776 "GET /api/tasks/ HTTP/1.1" 200 1890
+INFO 2025-10-10 00:19:11,397 basehttp 28500 26776 "GET /api/results/ HTTP/1.1" 200 3962
+INFO 2025-10-10 00:19:11,409 basehttp 28500 26776 "GET /api/results/RESULT_54742/ HTTP/1.1" 200 371
+WARNING 2025-10-10 00:19:11,421 log 28500 26776 Bad Request: /api/results/RESULT_54742/
+WARNING 2025-10-10 00:19:11,421 basehttp 28500 26776 "PATCH /api/results/RESULT_54742/ HTTP/1.1" 400 49
+WARNING 2025-10-10 00:19:11,432 log 28500 26776 Bad Request: /api/results/RESULT_54742/
+WARNING 2025-10-10 00:19:11,433 basehttp 28500 26776 "PUT /api/results/RESULT_54742/ HTTP/1.1" 400 49
+INFO 2025-10-10 00:20:53,095 basehttp 28500 28776 "POST /api/user/login/ HTTP/1.1" 200 182
+INFO 2025-10-10 00:20:53,115 basehttp 28500 28776 "GET /api/tasks/ HTTP/1.1" 200 1890
+INFO 2025-10-10 00:20:53,143 basehttp 28500 28776 "GET /api/results/ HTTP/1.1" 200 3962
+INFO 2025-10-10 00:20:53,150 basehttp 28500 28776 "GET /api/results/RESULT_54742/ HTTP/1.1" 200 371
+INFO 2025-10-10 00:20:53,237 basehttp 28500 28776 "PATCH /api/results/RESULT_54742/ HTTP/1.1" 200 371
+WARNING 2025-10-10 00:20:53,243 log 28500 28776 Not Found: /api/results/get_results_by_task/
+WARNING 2025-10-10 00:20:53,244 basehttp 28500 28776 "GET /api/results/get_results_by_task/?task_id=task-18425907 HTTP/1.1" 404 51
+WARNING 2025-10-10 00:20:53,251 log 28500 28776 Not Found: /api/results/get_results_by_suite/
+WARNING 2025-10-10 00:20:53,252 basehttp 28500 28776 "GET /api/results/get_results_by_suite/?suite_id=case HTTP/1.1" 404 51
+INFO 2025-10-10 00:22:24,255 basehttp 28500 19264 "POST /api/user/login/ HTTP/1.1" 200 182
+INFO 2025-10-10 00:22:24,280 basehttp 28500 19264 "GET /api/tasks/ HTTP/1.1" 200 1890
+INFO 2025-10-10 00:22:24,302 basehttp 28500 19264 "GET /api/results/ HTTP/1.1" 200 3962
+INFO 2025-10-10 00:22:24,313 basehttp 28500 19264 "GET /api/results/RESULT_54742/ HTTP/1.1" 200 371
+WARNING 2025-10-10 00:22:24,320 log 28500 19264 Bad Request: /api/results/RESULT_54742/
+WARNING 2025-10-10 00:22:24,321 basehttp 28500 19264 "PATCH /api/results/RESULT_54742/ HTTP/1.1" 400 48
+WARNING 2025-10-10 00:22:24,330 log 28500 19264 Bad Request: /api/results/RESULT_54742/
+WARNING 2025-10-10 00:22:24,331 basehttp 28500 19264 "PUT /api/results/RESULT_54742/ HTTP/1.1" 400 48
+INFO 2025-10-10 00:22:24,351 basehttp 28500 19264 "GET /api/results/?task_id=task-18425907 HTTP/1.1" 200 3962
+INFO 2025-10-10 00:22:24,375 basehttp 28500 19264 "GET /api/results/?suite_id=1 HTTP/1.1" 200 3962
+INFO 2025-10-10 00:24:48,642 basehttp 28500 15752 "POST /api/user/login/ HTTP/1.1" 200 182
+INFO 2025-10-10 00:24:48,664 basehttp 28500 15752 "GET /api/tasks/ HTTP/1.1" 200 1890
+INFO 2025-10-10 00:24:48,685 basehttp 28500 15752 "GET /api/results/ HTTP/1.1" 200 3962
+INFO 2025-10-10 00:24:48,694 basehttp 28500 15752 "GET /api/results/RESULT_54742/ HTTP/1.1" 200 371
+WARNING 2025-10-10 00:24:48,701 log 28500 15752 Bad Request: /api/results/RESULT_54742/
+WARNING 2025-10-10 00:24:48,702 basehttp 28500 15752 "PATCH /api/results/RESULT_54742/ HTTP/1.1" 400 48
+WARNING 2025-10-10 00:24:48,715 log 28500 15752 Bad Request: /api/results/RESULT_54742/
+WARNING 2025-10-10 00:24:48,716 basehttp 28500 15752 "PUT /api/results/RESULT_54742/ HTTP/1.1" 400 48
+WARNING 2025-10-10 00:24:48,744 log 28500 15752 Not Found: /api/results/update/RESULT_54742/
+WARNING 2025-10-10 00:24:48,745 basehttp 28500 15752 "POST /api/results/update/RESULT_54742/ HTTP/1.1" 404 23138
+INFO 2025-10-10 00:24:48,768 basehttp 28500 15752 "GET /api/results/?task_id=task-18425907 HTTP/1.1" 200 3962
+INFO 2025-10-10 00:24:48,792 basehttp 28500 15752 "GET /api/results/?suite_id=1 HTTP/1.1" 200 3962
+INFO 2025-10-10 00:25:55,959 basehttp 28500 26872 "POST /api/user/login/ HTTP/1.1" 200 182
+INFO 2025-10-10 00:25:55,981 basehttp 28500 26872 "GET /api/tasks/ HTTP/1.1" 200 1890
+WARNING 2025-10-10 00:25:55,986 log 28500 26872 Method Not Allowed: /api/results/create/
+WARNING 2025-10-10 00:25:55,986 basehttp 28500 26872 "POST /api/results/create/ HTTP/1.1" 405 41
+INFO 2025-10-10 00:25:56,008 basehttp 28500 26872 "GET /api/results/ HTTP/1.1" 200 3962
+INFO 2025-10-10 00:25:56,018 basehttp 28500 26872 "GET /api/results/RESULT_54742/ HTTP/1.1" 200 371
+WARNING 2025-10-10 00:25:56,025 log 28500 26872 Bad Request: /api/results/RESULT_54742/
+WARNING 2025-10-10 00:25:56,025 basehttp 28500 26872 "PATCH /api/results/RESULT_54742/ HTTP/1.1" 400 48
+WARNING 2025-10-10 00:25:56,032 log 28500 26872 Bad Request: /api/results/RESULT_54742/
+WARNING 2025-10-10 00:25:56,033 basehttp 28500 26872 "PUT /api/results/RESULT_54742/ HTTP/1.1" 400 48
+WARNING 2025-10-10 00:25:56,041 log 28500 26872 Not Found: /api/results/update/RESULT_54742/
+WARNING 2025-10-10 00:25:56,041 basehttp 28500 26872 "POST /api/results/update/RESULT_54742/ HTTP/1.1" 404 23138
+INFO 2025-10-10 00:25:56,060 basehttp 28500 26872 "GET /api/results/?task_id=task-18425907 HTTP/1.1" 200 3962
+INFO 2025-10-10 00:25:56,078 basehttp 28500 26872 "GET /api/results/?suite_id=1 HTTP/1.1" 200 3962
+INFO 2025-10-10 00:29:44,907 basehttp 28500 13808 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 200 3603
+INFO 2025-10-10 00:29:54,610 basehttp 28500 24856 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-10 00:29:54,722 basehttp 28500 27864 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-10 00:29:56,429 basehttp 28500 23548 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-10 00:29:56,452 basehttp 28500 13672 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-10 00:32:24,597 basehttp 28500 21912 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-10 00:32:24,619 basehttp 28500 20180 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-10 00:32:29,667 basehttp 28500 22216 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 200 3603
+INFO 2025-10-10 00:32:30,440 basehttp 28500 16572 "GET /api/modules/?page=1&pageSize=100 HTTP/1.1" 200 13556
+INFO 2025-10-10 00:32:32,138 basehttp 28500 17336 "GET /api/modules/?page=1&pageSize=100 HTTP/1.1" 200 13556
+INFO 2025-10-10 00:32:33,849 basehttp 28500 8096 "GET /api/environments/?page=1&pageSize=10&page_size=10&limit=10&_t=1760027553804 HTTP/1.1" 200 4821
+INFO 2025-10-10 00:32:41,766 basehttp 28500 19020 "GET /api/test_suites/?name=&visible_scope=&page=1&pageSize=10 HTTP/1.1" 200 826
+INFO 2025-10-10 00:32:44,991 basehttp 28500 34680 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 200 3603
+INFO 2025-10-10 00:32:46,969 basehttp 28500 32960 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 200 3603
+INFO 2025-10-10 00:33:05,769 basehttp 28500 25980 "GET /api/tasks/?name=&status=&env_id=&page=1&pageSize=10 HTTP/1.1" 200 1890
+INFO 2025-10-10 00:33:05,788 basehttp 28500 24960 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-10 00:35:39,571 basehttp 28500 22860 "GET /api/tasks/?name=&status=&env_id=&page=1&pageSize=10 HTTP/1.1" 200 1890
+INFO 2025-10-10 00:35:39,589 basehttp 28500 9740 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-10 00:37:41,808 basehttp 28500 4476 "GET /api/tasks/?name=&status=&env_id=&page=1&pageSize=10 HTTP/1.1" 200 1890
+INFO 2025-10-10 00:37:41,824 basehttp 28500 31444 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-10 00:40:50,279 basehttp 28500 23472 "GET /api/tasks/?name=&status=&env_id=&page=1&pageSize=10 HTTP/1.1" 200 1890
+INFO 2025-10-10 00:40:50,299 basehttp 28500 21540 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-10 00:41:08,304 basehttp 28500 29948 "GET /api/tasks/?name=&status=&env_id=&page=1&pageSize=10 HTTP/1.1" 200 1890
+INFO 2025-10-10 00:41:08,318 basehttp 28500 8008 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-10 00:41:15,894 basehttp 28500 12544 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-10 00:41:15,916 basehttp 28500 11760 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591

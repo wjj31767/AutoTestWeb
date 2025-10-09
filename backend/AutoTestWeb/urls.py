@@ -30,12 +30,14 @@ from test_suite.urls import router as test_suite_router
 from module_manager.urls import router as module_router
 from feature_testcase.urls import router as feature_testcase_router
 from execution_manager.urls import router as execution_router
+from result_manager.urls import router as result_router
 router.registry.extend(env_router.registry)
 router.registry.extend(common_router.registry)
 router.registry.extend(test_suite_router.registry)
 router.registry.extend(module_router.registry)
 router.registry.extend(feature_testcase_router.registry)
 router.registry.extend(execution_router.registry)
+router.registry.extend(result_router.registry)
 
 # API 根路由
 from .views import root_view

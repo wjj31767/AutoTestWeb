@@ -6,6 +6,7 @@ const Login = () => import('../views/Login.vue')
 const EnvList = () => import('../views/EnvList.vue')
 const AddTask = () => import('../views/AddTask.vue')
 const TaskDetail = () => import('../views/TaskDetail.vue')
+const TaskList = () => import('../views/TaskList.vue')
 const TestSuiteList = () => import('../views/TestSuiteList.vue')
 const ModuleList = () => import('../views/ModuleList.vue')
 const FeatureTestCaseList = () => import('../views/FeatureTestCaseList.vue')
@@ -47,6 +48,15 @@ const routes = [
     }
   },
   {
+    path: '/task/list',
+    name: 'TaskList',
+    component: TaskList,
+    meta: {
+      title: '执行任务列表',
+      requiresAuth: true
+    }
+  },
+  {
     path: '/task/detail/:id',
     name: 'TaskDetail',
     component: TaskDetail,
@@ -81,8 +91,22 @@ const routes = [
       title: '特性测试用例管理',
       requiresAuth: true
     }
+  },
+  // 为了兼容App.vue中的菜单配置，添加index前缀的路由重定向
+  {
+    path: '/index/task/list',
+    redirect: '/task/list'
+  },
+  // 如果有其他index前缀的路由也需要重定向，可以在这里添加
+  {
+    path: '/index/task/add',
+    redirect: '/task/add'
+  },
+  {
+    path: '/index/task/detail/:id',
+    redirect: '/task/detail/:id'
   }
-  ]
+]
   
   const router = createRouter({
   history: createWebHistory(),
