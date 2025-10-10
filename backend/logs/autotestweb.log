@@ -5580,3 +5580,12 @@ INFO 2025-10-10 22:41:19,181 basehttp 27352 29528 "GET /api/environments/?page=1
 INFO 2025-10-10 22:41:19,276 basehttp 27352 13484 "GET /api/tasks/?name=&status=&env_id=&page=1&pageSize=10 HTTP/1.1" 200 1890
 INFO 2025-10-10 22:41:22,037 basehttp 27352 35768 "GET /api/tasks/?name=&status=&env_id=&page=1&pageSize=10 HTTP/1.1" 200 1890
 INFO 2025-10-10 22:41:22,050 basehttp 27352 33928 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-11 00:48:39,256 basehttp 27352 35180 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 200 3603
+INFO 2025-10-11 00:48:40,458 basehttp 27352 13828 "GET /api/tasks/?name=&status=&env_id=&page=1&pageSize=10 HTTP/1.1" 200 1890
+INFO 2025-10-11 00:48:40,476 basehttp 27352 28124 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-11 00:51:43,077 basehttp 27352 24936 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=10 HTTP/1.1" 200 3603
+INFO 2025-10-11 00:51:47,563 basehttp 27352 34732 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=20 HTTP/1.1" 200 7140
+INFO 2025-10-11 00:51:51,418 basehttp 27352 26252 "GET /api/modules/?module_name=&chip_model=&creator=&page=1&pageSize=50 HTTP/1.1" 200 13555
+INFO 2025-10-11 00:51:57,343 basehttp 27352 12592 "GET /api/modules/?page=1&pageSize=100 HTTP/1.1" 200 13556
+INFO 2025-10-11 00:52:02,971 basehttp 27352 28200 "GET /api/tasks/?name=&status=&env_id=&page=1&pageSize=10 HTTP/1.1" 200 1890
+INFO 2025-10-11 00:52:02,981 basehttp 27352 21892 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591

@@ -63,6 +63,157 @@ ExecMgmt --> ExceptionHandler
 DockerMonitor --> DockerCleanup
 @enduml
 
+@startuml 数据视图
+' ===== 数据视图（Data View）=====
+title 数据视图（Data View）
+
+' 使用实体关系图表示系统中的主要数据实体及其关系
+' 环境管理相关实体
+entity "Environment" as Env {
+  * id : int
+  --
+  * name : string
+  * type : enum
+  * status : enum
+  * ip_address : string
+  * port : int
+  description : string
+  created_at : datetime
+  updated_at : datetime
+  * creator_id : int
+}
+
+' 模块管理相关实体
+entity "Module" as Module {
+  * id : int
+  --
+  * name : string
+  * code : string
+  description : string
+  created_at : datetime
+  updated_at : datetime
+  * creator_id : int
+}
+
+' 特性管理相关实体
+entity "Feature" as Feature {
+  * id : int
+  --
+  * name : string
+  * module_id : int
+  description : string
+  created_at : datetime
+  updated_at : datetime
+  * creator_id : int
+}
+
+' 测试用例相关实体
+entity "TestCase" as TestCase {
+  * id : int
+  --
+  * name : string
+  * feature_id : int
+  * priority : enum
+  * type : enum
+  description : string
+  steps : text
+  expected_result : text
+  created_at : datetime
+  updated_at : datetime
+  * creator_id : int
+}
+
+' 测试套件相关实体
+entity "TestSuite" as TestSuite {
+  * id : int
+  --
+  * name : string
+  description : string
+  created_at : datetime
+  updated_at : datetime
+  * creator_id : int
+}
+
+' 测试套件与测试用例的关联
+entity "TestSuiteCase" as TestSuiteCase {
+  * id : int
+  --
+  * test_suite_id : int
+  * test_case_id : int
+  * order : int
+}
+
+' 执行任务相关实体
+entity "Task" as Task {
+  * id : int
+  --
+  * name : string
+  * env_id : int
+  * test_suite_id : int
+  * status : enum
+  * start_time : datetime
+  end_time : datetime
+  parameters : json
+  created_at : datetime
+  * creator_id : int
+}
+
+' 执行结果相关实体
+entity "Result" as Result {
+  * id : int
+  --
+  * task_id : int
+  * test_case_id : int
+  * status : enum
+  * start_time : datetime
+  * end_time : datetime
+  log_path : string
+  error_message : text
+}
+
+' 用户相关实体
+entity "User" as User {
+  * id : int
+  --
+  * username : string
+  * password : string
+  * email : string
+  * role : enum
+  created_at : datetime
+  last_login : datetime
+}
+
+' 实体间关系
+User "1" -- "n" Env : 创建
+User "1" -- "n" Module : 创建
+User "1" -- "n" Feature : 创建
+User "1" -- "n" TestCase : 创建
+User "1" -- "n" TestSuite : 创建
+User "1" -- "n" Task : 创建
+
+Module "1" -- "n" Feature : 包含
+Feature "1" -- "n" TestCase : 包含
+
+TestSuite "1" -- "n" TestSuiteCase : 包含
+TestCase "1" -- "n" TestSuiteCase : 关联
+
+Env "1" -- "n" Task : 执行环境
+TestSuite "1" -- "n" Task : 执行内容
+
+Task "1" -- "n" Result : 产生
+TestCase "1" -- "n" Result : 关联
+
+note bottom of TestCase
+  测试用例是系统的核心数据实体，
+  与特性、测试套件、执行结果等多个实体相关联
+end note
+
+note bottom of Task
+  任务实体记录测试套件在特定环境下的执行情况，
+  是连接环境、测试套件和执行结果的关键实体
+end note
+@enduml
+
 @startuml 进程视图
 ' ===== 进程视图（Process View）=====
 title 进程视图（Process View）

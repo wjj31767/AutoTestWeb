@@ -165,7 +165,7 @@
               v-model:page-size="pagination.pageSize"
               :page-sizes="[10, 20, 50, 100]"
               layout="total, sizes, prev, pager, next, jumper"
-              :total="filteredTestCases.length"
+              :total="pagination.total"
               @size-change="handleSizeChange"
               @current-change="handleCurrentChange"
             />
