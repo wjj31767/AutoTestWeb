@@ -1,0 +1,239 @@
+@startuml 逻辑视图
+' ===== 逻辑视图（Logical View）=====
+title 逻辑视图（Logical View）
+
+package "表现层" #lightgreen {
+  [前端交互模块] as Frontend
+  [API网关模块] as APIGateway
+}
+
+package "业务逻辑层" #lightyellow {
+  [环境管理模块] as EnvMgmt
+  [测试套管理模块] as SuiteMgmt
+  [模块管理模块] as ModuleMgmt
+  [特性与测试用例管理模块] as FeatureCaseMgmt
+  [用例执行管理模块] as ExecMgmt
+  [用例执行结果管理模块] as ResultMgmt
+}
+
+package "数据层" #lightcoral {
+  [数据存储模块] as DataStore
+  [数据加密模块] as DataEncrypt
+  [代码仓交互模块] as RepoSync
+  [文件存储模块] as FileStore
+  [Docker数据清理模块] as DockerCleanup
+}
+
+package "基础设施层" #lightpink {
+  [日志管理模块] as LogMgmt
+  [监控告警模块] as AlertMgmt
+  [异常处理模块] as ExceptionHandler
+  [环境连接适配模块] as ConnAdapter
+  [Docker数据监控模块] as DockerMonitor
+}
+
+' 层级间依赖关系
+Frontend --> APIGateway
+APIGateway --> EnvMgmt
+APIGateway --> SuiteMgmt
+APIGateway --> ModuleMgmt
+APIGateway --> FeatureCaseMgmt
+APIGateway --> ExecMgmt
+APIGateway --> ResultMgmt
+
+EnvMgmt --> DataStore
+SuiteMgmt --> DataStore
+ModuleMgmt --> DataStore
+FeatureCaseMgmt --> DataStore
+FeatureCaseMgmt --> RepoSync
+ExecMgmt --> DataStore
+ExecMgmt --> FileStore
+ResultMgmt --> DataStore
+ResultMgmt --> FileStore
+
+DataStore --> DataEncrypt
+DataStore --> DockerCleanup
+FileStore --> DockerCleanup
+
+EnvMgmt --> ConnAdapter
+ExecMgmt --> ConnAdapter
+ExecMgmt --> LogMgmt
+ExecMgmt --> AlertMgmt
+ExecMgmt --> ExceptionHandler
+DockerMonitor --> DockerCleanup
+@enduml
+
+@startuml 进程视图
+' ===== 进程视图（Process View）=====
+title 进程视图（Process View）
+
+actor "用户" as User
+participant "浏览器" as Browser
+participant "前端服务" as FrontendService
+participant "Django API服务" as DjangoAPI
+participant "Celery任务队列" as CeleryQueue
+participant "Celery Worker" as CeleryWorker
+participant "数据库服务" as DBService
+participant "文件存储服务" as FileService
+participant "验证环境" as TestEnv
+
+User -> Browser: 访问系统
+Browser -> FrontendService: HTTP请求
+FrontendService -> DjangoAPI: API调用
+DjangoAPI -> DBService: 数据查询/存储
+DjangoAPI -> FileService: 文件读写
+DjangoAPI -> CeleryQueue: 提交异步任务
+CeleryQueue -> CeleryWorker: 分发任务
+CeleryWorker -> TestEnv: 执行验证任务
+CeleryWorker -> DBService: 更新任务状态
+CeleryWorker -> FileService: 存储执行日志
+DjangoAPI -> Browser: 返回结果
+Browser -> User: 展示结果
+
+note over CeleryWorker, TestEnv
+  并发控制：同一环境只支持一个任务执行
+  不同环境可并行执行
+end note
+@enduml
+
+@startuml 开发视图
+' ===== 开发视图（Development View）=====
+title 开发视图（Development View）
+
+package "前端代码" #lightblue {
+  [Vue3组件]
+  [Element Plus UI库]
+  [API客户端]
+  [状态管理]
+}
+
+package "后端代码" #lightyellow {
+  [Django项目配置]
+  [Django应用模块] as DjangoApps
+  [Django REST Framework API] as DRF
+  [Celery任务]
+  [ORM模型]
+  [工具类]
+}
+
+package "Django应用模块" as DjangoApps {
+  [环境管理应用]
+  [测试套管理应用]
+  [模块管理应用]
+  [特性与测试用例应用]
+  [用例执行应用]
+  [结果管理应用]
+  [公共组件应用]
+}
+
+package "部署配置" #lightgreen {
+  [Docker配置]
+  [数据库迁移脚本]
+  [环境变量配置]
+}
+
+package "测试代码" #lightcoral {
+  [单元测试]
+  [集成测试]
+  [E2E测试]
+}
+
+[Vue3组件] --> [API客户端]
+[API客户端] --> [DRF]
+[DRF] --> [DjangoApps]
+[DjangoApps] --> [ORM模型]
+[DjangoApps] --> [Celery任务]
+[Celery任务] --> [工具类]
+[ORM模型] --> [数据库迁移脚本]
+[DjangoApps] --> [单元测试]
+[DRF] --> [集成测试]
+[Vue3组件] --> [E2E测试]
+@enduml
+
+@startuml 物理视图
+' ===== 物理视图（Physical View）=====
+title 物理视图（Physical View）
+
+node "用户终端" as UserTerminal {
+  [Web浏览器]
+}
+
+node "应用服务器" as AppServer {
+  [Nginx Web服务器]
+  [Django应用]
+  [Celery Worker]
+  [Redis]
+}
+
+database "Docker容器-MySQL" as DockerMySQL {
+  [MySQL数据库]
+}
+
+storage "Docker数据卷" as DockerVolume {
+  [日志文件]
+  [上传文件]
+  [测试结果]
+}
+
+cloud "代码仓库" as CodeRepo {
+  [Git仓库]
+}
+
+node "验证环境集群" as TestEnvCluster {
+  [FPGA环境]
+  [Socket环境]
+  [QEMU环境]
+  [产品版环境]
+}
+
+UserTerminal --> AppServer : HTTPS
+AppServer --> DockerMySQL : TCP/IP
+AppServer --> DockerVolume : 文件IO
+AppServer --> CodeRepo : HTTPS/SSH
+AppServer --> TestEnvCluster : Telnet/SSH
+@enduml
+
+@startuml 场景视图
+' ===== 场景视图（Scenario View）=====
+title 场景视图（Scenario View）
+
+actor 用户
+actor 验证工程师
+actor 系统管理员
+
+usecase "创建验证环境" as UC1
+usecase "创建测试套" as UC2
+usecase "配置模块与特性" as UC3
+usecase "执行测试用例" as UC4
+usecase "查看执行结果" as UC5
+usecase "导出测试报告" as UC6
+usecase "监控系统状态" as UC7
+usecase "清理历史数据" as UC8
+
+用户 --> UC1
+用户 --> UC2
+用户 --> UC3
+用户 --> UC4
+用户 --> UC5
+用户 --> UC6
+
+验证工程师 --> UC1
+验证工程师 --> UC2
+验证工程师 --> UC3
+验证工程师 --> UC4
+验证工程师 --> UC5
+验证工程师 --> UC6
+
+系统管理员 --> UC7
+系统管理员 --> UC8
+
+note right of UC4
+  测试用例执行流程:
+  1. 选择测试套
+  2. 选择执行环境
+  3. 配置执行参数
+  4. 提交执行任务
+  5. 监控执行状态
+  6. 查看执行结果
+end note
+@enduml

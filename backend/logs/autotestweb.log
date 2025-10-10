@@ -5570,3 +5570,13 @@ INFO 2025-10-10 00:41:08,304 basehttp 28500 29948 "GET /api/tasks/?name=&status=
 INFO 2025-10-10 00:41:08,318 basehttp 28500 8008 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
 INFO 2025-10-10 00:41:15,894 basehttp 28500 12544 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
 INFO 2025-10-10 00:41:15,916 basehttp 28500 11760 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-10 22:37:05,665 autoreload 27352 22604 Watching for file changes with StatReloader
+INFO 2025-10-10 22:41:11,809 basehttp 27352 29884 "GET /api/environments/?page=1&pageSize=10&page_size=10&limit=10&_t=1760107271589 HTTP/1.1" 200 4821
+INFO 2025-10-10 22:41:15,103 basehttp 27352 7972 "GET /api/environments/?page=1&pageSize=10&page_size=10&limit=10&_t=1760107275071 HTTP/1.1" 200 4821
+INFO 2025-10-10 22:41:16,469 basehttp 27352 11340 "GET /api/test_suites/?name=&visible_scope=&page=1&pageSize=10 HTTP/1.1" 200 826
+INFO 2025-10-10 22:41:18,316 basehttp 27352 1908 "GET /api/test_suites/?page=1&pageSize=100 HTTP/1.1" 200 827
+INFO 2025-10-10 22:41:18,339 basehttp 27352 15596 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-10 22:41:19,181 basehttp 27352 29528 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
+INFO 2025-10-10 22:41:19,276 basehttp 27352 13484 "GET /api/tasks/?name=&status=&env_id=&page=1&pageSize=10 HTTP/1.1" 200 1890
+INFO 2025-10-10 22:41:22,037 basehttp 27352 35768 "GET /api/tasks/?name=&status=&env_id=&page=1&pageSize=10 HTTP/1.1" 200 1890
+INFO 2025-10-10 22:41:22,050 basehttp 27352 33928 "GET /api/environments/?page=1&pageSize=100 HTTP/1.1" 200 14591
